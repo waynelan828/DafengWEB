@@ -1,9 +1,9 @@
 [build]
 publish = "dist"
-command = "yarn build"
+command = "npm run build"   # 改用 npm，避免掉 Yarn 相容性問題
 
 [build.environment]
-NODE_VERSION = "18"
+NODE_VERSION = "20"         # 強制使用 Node 20
 
 [[headers]]
-for = "/*" # This defines which paths this specific [[headers]] block will cover.
+for = "/*"
