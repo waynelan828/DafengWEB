@@ -2,9 +2,9 @@ backend:
   name: github
   repo: waynelan828/DafengWEB
   branch: main
-  site_domain: nice8.work 
+  site_domain: nice8.work
   base_url: https://nice8.work # Your site domain
-  
+
   auth_endpoint: /oauth
 
 media_folder: 'public/images/uploads'
@@ -20,3 +20,24 @@ collections:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Date', name: 'date', widget: 'datetime' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'pages'
+    label: 'Pages'
+    files:
+      - label: 'About Page'
+        name: 'about'
+        file: 'src/pages/about.astro'
+        fields:
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'text' }
+      - label: 'Contact Page'
+        name: 'contact'
+        file: 'src/pages/contact.astro'
+        fields:
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'text' }
+      - label: 'Privacy Policy'
+        name: 'privacy'
+        file: 'src/pages/privacy.md'
+        fields:
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
