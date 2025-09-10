@@ -2,8 +2,9 @@ backend:
   name: github
   repo: waynelan828/DafengWEB
   branch: main
-  site_domain: nice8.work # Cloudflare 頁面域名
-  base_url: https://nice8.work # 部署後正式網址
+  site_domain: nice8.work 
+  base_url: https://nice8.work # Your site domain
+  
   auth_endpoint: /oauth
 
 media_folder: 'public/images/uploads'
