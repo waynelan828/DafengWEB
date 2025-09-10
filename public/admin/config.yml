@@ -1,0 +1,21 @@
+backend:
+  name: github
+  repo: waynelan828/DafengWEB
+  branch: main
+  site_domain: nice8.work # Cloudflare 頁面域名
+  base_url: https://nice8.work # 部署後正式網址
+  auth_endpoint: /oauth
+
+media_folder: 'public/images/uploads'
+public_folder: '/images/uploads'
+
+collections:
+  - name: 'posts'
+    label: 'Posts'
+    folder: 'src/content/posts'
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Date', name: 'date', widget: 'datetime' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }

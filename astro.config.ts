@@ -11,18 +11,30 @@ import icon from 'astro-icon';
 import compress from 'astro-compress';
 import type { AstroIntegration } from 'astro';
 
+import netlify from '@astrojs/netlify/functions';     // 🚀 Netlify adapter
+import decapCmsOauth from 'astro-decap-cms-oauth';    // 🚀 Decap CMS OAuth
 import astrowind from './vendor/integration';
 
-import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin, lazyImagesRehypePlugin } from './src/utils/frontmatter';
+import {
+  readingTimeRemarkPlugin,
+  responsiveTablesRehypePlugin,
+  lazyImagesRehypePlugin,
+} from './src/utils/frontmatter';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const hasExternalScripts = false;
-const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroIntegration)[] = []) =>
-  hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
+const whenExternalScripts = (
+  items: (() => AstroIntegration) | (() => AstroIntegration)[] = []
+) =>
+  hasExternalScripts
+    ? Array.isArray(items)
+      ? items.map((item) => item())
+      : [items()]
+    : [];
 
 export default defineConfig({
-  output: 'static',
+  adapter: netlify(), // ✅ 使用 Netlify adapter 部署
 
   integrations: [
     tailwind({
@@ -69,6 +81,8 @@ export default defineConfig({
     astrowind({
       config: './src/config.yaml',
     }),
+
+    decapCmsOauth(), // ✅ 加上 Decap CMS OAuth
   ],
 
   image: {
