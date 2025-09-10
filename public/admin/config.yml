@@ -2,21 +2,53 @@ backend:
   name: github
   repo: waynelan828/DafengWEB
   branch: main
-  site_domain: nice8.work 
-  base_url: https://nice8.work # Your site domain
-  
+  site_domain: nice8.work
+  base_url: https://nice8.work
   auth_endpoint: /oauth
 
-media_folder: 'public/images/uploads'
-public_folder: '/images/uploads'
+media_folder: public/images/uploads
+public_folder: /images/uploads
 
 collections:
-  - name: 'posts'
-    label: 'Posts'
-    folder: 'src/content/posts'
+  # Blog posts stored in src/data/post (md/mdx)
+  - name: post
+    label: Posts
+    folder: src/data/post
     create: true
     slug: '{{slug}}'
+    extension: md
+    format: frontmatter
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Date', name: 'date', widget: 'datetime' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: Title, name: title, widget: string }
+      - { label: Publish Date, name: publishDate, widget: datetime, required: false }
+      - { label: Update Date, name: updateDate, widget: datetime, required: false }
+      - { label: Draft, name: draft, widget: boolean, default: false, required: false }
+      - { label: Excerpt, name: excerpt, widget: text, required: false }
+      - { label: Featured Image, name: image, widget: image, required: false }
+      - { label: Category, name: category, widget: string, required: false }
+      - label: Tags
+        name: tags
+        widget: list
+        required: false
+        field: { label: Tag, name: tag, widget: string }
+      - { label: Author, name: author, widget: string, required: false }
+      - { label: Body, name: body, widget: markdown }
+
+  # Legal pages (Markdown) under src/pages
+  - name: pages
+    label: Pages
+    files:
+      - label: Privacy Policy
+        name: privacy
+        file: src/pages/privacy.md
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Layout, name: layout, widget: hidden, default: '~/layouts/MarkdownLayout.astro' }
+          - { label: Body, name: body, widget: markdown }
+      - label: Terms & Conditions
+        name: terms
+        file: src/pages/terms.md
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Layout, name: layout, widget: hidden, default: '~/layouts/MarkdownLayout.astro' }
+          - { label: Body, name: body, widget: markdown }
