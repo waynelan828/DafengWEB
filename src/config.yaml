@@ -1,5 +1,5 @@
 site:
-  name: 大鋒工程 Da Feng Interior
+  name: 大鋒木作工程
   site: 'https://nice8.works'
   base: '/'
   trailingSlash: false
@@ -10,14 +10,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: 大鋒工程｜室內裝修與木作整合
+    default: 大鋒工程｜專業B2B木工工班
     template: '%s ｜大鋒工程'
-  description: '設計師與屋主信賴的施工團隊，提供室內裝修、木作/系統櫃、水電泥作油漆等一站式整合，流程透明、工期嚴謹、品質保固。'
+  description: '設計師與屋主信賴的木工施工團隊，提供木作工程一站式整合，流程透明、工期嚴謹、品質保固。'
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: 大鋒工程 Da Feng Interior
+    site_name: 大鋒木作工程
     images:
       - url: '~/assets/images/default.png'
         width: 1200

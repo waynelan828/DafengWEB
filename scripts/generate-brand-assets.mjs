@@ -22,6 +22,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 import sharp from 'sharp';
+import pngToIco from 'png-to-ico';
 
 const root = process.cwd();
 const brandDir = path.join(root, 'public', 'brand');
@@ -49,7 +50,7 @@ function enhanceForGeneral(img) {
 }
 
 function enhanceForDarkBg(img) {
-  return img.clone().normalize().modulate({ brightness: 1.18, saturation: 1.08 }).linear(1.02, -4);
+  return img.clone().normalize().modulate({ brightness: 2, saturation: 2 }).linear(1.02, -4);
 }
 
 async function writePng(pipeline, file) {
@@ -70,7 +71,8 @@ async function generate() {
 
   // Prepare logo variants for header
   if (sourceLogo) {
-    const base = sharp(sourceLogo, { limitInputPixels: false });
+    const logoBuffer = await fs.readFile(sourceLogo);
+    const base = sharp(logoBuffer, { limitInputPixels: false });
     // Keep good resolution; UI constrains display height. Transparent background preserved.
     const logoLight = enhanceForGeneral(base).resize({ width: 1024, withoutEnlargement: true, fit: 'inside', background: { r: 0, g: 0, b: 0, alpha: 0 } });
     const logoDark = enhanceForDarkBg(base).resize({ width: 1024, withoutEnlargement: true, fit: 'inside', background: { r: 0, g: 0, b: 0, alpha: 0 } });
@@ -81,7 +83,8 @@ async function generate() {
 
   // Favicons from mark (fallback to logo)
   if (sourceMark) {
-    const iconBase = enhanceForGeneral(sharp(sourceMark, { limitInputPixels: false }));
+    const markBuffer = await fs.readFile(sourceMark);
+    const iconBase = enhanceForGeneral(sharp(markBuffer, { limitInputPixels: false }));
 
     // Square canvas with transparent padding if needed
     const toSquare = async (size) =>
@@ -93,10 +96,15 @@ async function generate() {
     await writePng(await toSquare(32), path.join(faviconDir, 'favicon-32x32.png'));
     await writePng(await toSquare(16), path.join(faviconDir, 'favicon-16x16.png'));
 
-    // ICO (single-size for broad compatibility)
-    const ico32 = await (await toSquare(32)).png().toBuffer();
+    // ICO (multi-size using png-to-ico)
+    const icoPngBufs = await Promise.all([
+      (await toSquare(16)).png().toBuffer(),
+      (await toSquare(32)).png().toBuffer(),
+      (await toSquare(48)).png().toBuffer(),
+    ]);
+    const icoBuf = await pngToIco(icoPngBufs);
     const icoOut = path.join(faviconDir, 'favicon.ico');
-    await sharp(ico32).toFormat('ico').toFile(icoOut);
+    await fs.writeFile(icoOut, icoBuf);
   }
 
   console.log('Brand assets generated under public/brand and public/favicon');
