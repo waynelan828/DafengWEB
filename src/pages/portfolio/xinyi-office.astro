@@ -1,0 +1,38 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+
+const metadata = {
+  title: '信義區｜辦公室改造',
+  description: '商空整修：玻璃隔間、公共區域動線優化、會議室與茶水間更新',
+};
+---
+
+<Layout metadata={metadata}>
+  <Content
+    tagline="商業空間"
+    title="信義區辦公室改造"
+    items={[
+      { title: '地點', description: '台北市信義區' },
+      { title: '坪數', description: '約 80 坪' },
+      { title: '施工內容', description: '玻璃隔間、地毯更換、照明改善、會議室與茶水間更新' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1600&q=80',
+      alt: '信義區辦公室改造 完工主視覺',
+    }}
+  >
+    <Fragment slot="content">
+      以明亮通透為主軸，透過玻璃隔間創造彈性會議空間與自然採光；公共區域調整動線，提升團隊協作效率。
+    </Fragment>
+  </Content>
+
+  <section class="container py-10">
+    <div class="grid gap-6 md:grid-cols-3">
+      <img class="rounded-lg" src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1200&q=80" alt="開放辦公區" />
+      <img class="rounded-lg" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" alt="玻璃隔間會議室" />
+      <img class="rounded-lg" src="https://images.unsplash.com/photo-1520881363902-a0ff4e722963?auto=format&fit=crop&w=1200&q=80" alt="茶水間" />
+    </div>
+  </section>
+</Layout>
+

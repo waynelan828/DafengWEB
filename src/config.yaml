@@ -1,22 +1,23 @@
 site:
-  name: AstroWind
-  site: 'https://astrowind.vercel.app'
+  name: 大鋒工程 Da Feng Interior
+  site: 'https://nice8.works'
   base: '/'
   trailingSlash: false
 
-  googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
+  # Google Search Console 驗證碼（填入內容字串即可啟用 meta 驗證）
+  googleSiteVerificationId: ''
 
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: 大鋒工程｜室內裝修與木作整合
+    template: '%s ｜大鋒工程'
+  description: '設計師與屋主信賴的施工團隊，提供室內裝修、木作/系統櫃、水電泥作油漆等一站式整合，流程透明、工期嚴謹、品質保固。'
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: 大鋒工程 Da Feng Interior
     images:
       - url: '~/assets/images/default.png'
         width: 1200
@@ -28,7 +29,7 @@ metadata:
     cardType: summary_large_image
 
 i18n:
-  language: en
+  language: zh-TW
   textDirection: ltr
 
 apps:
@@ -38,25 +39,25 @@ apps:
 
     post:
       isEnabled: true
-      permalink: '/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
+      permalink: '/%slug%'
       robots:
         index: true
 
     list:
       isEnabled: true
-      pathname: 'blog' # Blog main path, you can change this to "articles" (/articles)
+      pathname: 'blog'
       robots:
         index: true
 
     category:
       isEnabled: true
-      pathname: 'category' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
+      pathname: 'category'
       robots:
         index: true
 
     tag:
       isEnabled: true
-      pathname: 'tag' # Tag main path /tag/some-tag, you can change this to "topics" (/topics/some-category)
+      pathname: 'tag'
       robots:
         index: false
 
@@ -66,7 +67,8 @@ apps:
 analytics:
   vendors:
     googleAnalytics:
-      id: null # or "G-XXXXXXXXXX"
+      id: null # 範例：G-XXXXXXXXXX，設定後自動載入 GA
 
 ui:
   theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
+

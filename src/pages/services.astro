@@ -3,222 +3,118 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import Content from '~/components/widgets/Content.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Hero from '~/components/widgets/Hero.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
-  title: 'Services',
+  title: '服務項目｜室內裝修・木作・服務流程',
+  description: '住宅與商空裝修、木作與系統櫃、泥作水電油漆、玻璃鐵件等一站式承作，流程透明、品質保固。',
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-
+  <!-- Hero -->
   <Hero
     tagline="Services"
-    title="Elevate your projects with our stunning templates"
-    subtitle="Explore our meticulously crafted templates tailored to various industries and purposes. From captivating presentations to functional website designs, we offer the tools you need to succeed."
-    actions={[{ variant: 'primary', target: '_blank', text: 'Start exploring', href: '/' }]}
+    title="專業施工團隊，讓設計準確落地"
+    subtitle="室內裝修、木作、系統櫃到水電泥作油漆，單一窗口整合管理，準時完工、品質有保固。"
+    actions={[{ variant: 'primary', text: '取得估價', href: '/contact' }, { text: '看作品集', href: '/portfolio' }]}
     image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'AstroWind Hero Image',
+      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1740&q=80',
+      alt: '大鋒工程 服務項目',
     }}
   />
 
-  <!-- Features2 Widget ************** -->
-
+  <!-- 室內裝修 -->
   <Features2
-    title="Explore our diverse templates"
-    subtitle="Discover our selection below to streamline and elevate your projects."
+    title="室內裝修"
+    subtitle="從格局調整到軟裝搭配，依您生活需求客製化"
     columns={3}
     items={[
-      {
-        title: 'Educational',
-        description:
-          'By harmonizing instructional design and visual appeal, templates streamline content creation for varied materials, expediting development and cultivating engaging educational spaces.',
-        icon: 'tabler:school',
-      },
-      {
-        title: 'Interior Design',
-        description:
-          'Crafting functional, visually appealing spaces for residential and commercial use. Templates emphasize layout, colors, and furniture setups, offering a versatile toolkit for your design vision.',
-        icon: 'tabler:home-star',
-      },
-      {
-        title: 'Photography',
-        description: `Empowering photographers, our templates facilitate captivating storytelling. With a keen focus on layout, galleries, and typography, they cater to both professionals and enthusiasts.`,
-        icon: 'tabler:photo',
-      },
-      {
-        title: 'E-commerce',
-        description:
-          'Developing engaging online stores, our E-commerce templates ensure a dynamic presence to effectively showcase products. Ideal for startups or revamps.',
-        icon: 'tabler:shopping-cart',
-      },
-      {
-        title: 'Blog',
-        description:
-          'With attention to typography, these templates empower effective content presentation for writers at any stage, ensuring visually engaging and user-friendly blogs.',
-        icon: 'tabler:article',
-      },
-      {
-        title: 'Business',
-        description:
-          'Providing polished options for effective visual communication, these templates empower both startups and established companies for a professional brand presence.',
-        icon: 'tabler:building-store',
-      },
-      {
-        title: 'Branding',
-        description:
-          'Offering pre-designed elements for a consistent brand identity, including logos and marketing materials. Ideal for new ventures or revamps.',
-        icon: 'tabler:arrow-big-up-lines',
-      },
-      {
-        title: 'Medical',
-        description: `From presentations to patient forms, these tools enhance communication effectiveness for healthcare professionals. Ideal for medical practices and research pursuits.`,
-        icon: 'tabler:vaccine',
-      },
-      {
-        title: 'Fashion Design',
-        description:
-          'With attention to detail, customization, and contemporary design, they empower designers to showcase ideas cohesively. Ideal for all levels of designers.',
-        icon: 'tabler:tie',
-      },
+      { title: '格局/隔間/門片', description: '輕隔間、氣密門、拉門、木作或鋁框玻璃門片。', icon: 'tabler:layout-grid' },
+      { title: '地坪/天花', description: '超耐磨地板、SPC/石英磚、系統天花/局部修飾。', icon: 'tabler:square-rounded' },
+      { title: '廚衛/設備', description: '廚房更新與衛浴整修、五金設備與動線規劃。', icon: 'tabler:tools-kitchen-2' },
+      { title: '水電/弱電', description: '配電回路、插座燈具、網路與監控線路配置。', icon: 'tabler:device-desktop-analytics' },
+      { title: '壁材/塗裝', description: '批土找平、乳膠漆/特殊漆、進口壁材與壁紙。', icon: 'tabler:brush' },
+      { title: '軟裝/窗飾', description: '窗簾/百葉、燈具/五金、家電與家具到位搭配。', icon: 'tabler:armchair' },
     ]}
   />
 
-  <!-- Content Widget **************** -->
-
+  <!-- 木作與系統櫃 -->
   <Content
     isReversed
     items={[
       {
-        title: 'High-Quality Designs',
+        title: '木作與系統櫃',
         description:
-          'Our templates feature top-tier designs that ensure a professional and polished appearance for your projects.',
-        icon: 'tabler:wand',
+          '電視牆、鞋櫃、收納櫃、衣櫃、床架與書房規劃。依預算與風格選擇手作木工或系統板材，重視收邊與耐用性。',
+        icon: 'tabler:wood',
       },
       {
-        title: 'Customization Tools',
-        description:
-          'Tailor each template to your unique needs with user-friendly customization tools that let you personalize colors, fonts, and content.',
-        icon: 'tabler:settings',
+        title: '用料與工法',
+        description: 'F1/F3 木心板、夾板、系統板與五金滑軌鉸鍊等，依需求出具規格。',
+        icon: 'tabler:meat',
       },
       {
-        title: 'Pre-Designed Elements',
-        description:
-          'Save time and effort with our ready-to-use elements, including graphics, icons, and layouts that enhance the visual appeal of your creations.',
-        icon: 'tabler:presentation',
-      },
-      {
-        title: 'Preview and Mockup Views',
-        description:
-          'Visualize the final outcome before making any changes using our preview and mockup views, ensuring your projects meet your expectations.',
-        icon: 'tabler:carousel-horizontal',
+        title: '表面處理',
+        description: '美耐皿/系統門板、噴漆、皮革/石材包覆等多樣化選擇。',
+        icon: 'tabler:color-swatch',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1525909002-1b05e0c869d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
-      alt: 'Features Image',
+      src: 'https://images.unsplash.com/photo-1505692794403-34d4982f88aa?auto=format&fit=crop&w=1200&q=80',
+      alt: '木作與系統櫃',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Main Features</h3>
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">木作細節決定質感</h3>
+      開合順暢、收邊俐落、比例協調與實用機能，讓家更耐住也更好用。
     </Fragment>
   </Content>
 
-  <!-- Content Widget **************** -->
-
-  <Content
-    isAfterContent
+  <!-- 服務流程 -->
+  <Steps2
+    title="服務流程"
+    subtitle="流程清楚、里程碑驗收、透明溝通，準時完工"
     items={[
-      {
-        title: 'Time Savings',
-        description:
-          'Streamline your workflow, enabling you to create stunning materials efficiently and allocate more time to your core tasks.',
-        icon: 'tabler:clock',
-      },
-      {
-        title: 'Professional Appearance',
-        description:
-          'Elevate your projects with the polished and sophisticated look that our templates provide, making a lasting impression on your audience.',
-        icon: 'tabler:school',
-      },
-      {
-        title: 'Cost-Efficiency',
-        description:
-          'Benefit from cost savings by avoiding the need for custom design work, as our templates offer professional-grade designs at a fraction of the cost.',
-        icon: 'tabler:coin',
-      },
-      {
-        title: 'Instant Download',
-        description:
-          'Enjoy immediate access to your chosen templates upon purchase, enabling you to begin working on your projects without delay.',
-        icon: 'tabler:file-download',
-      },
+      { title: '1. 線上諮詢與初估', description: '瞭解需求與預算，提供工法建議與大致費用。', icon: 'tabler:message-check' },
+      { title: '2. 現場丈量與討論', description: '到府勘查，確認尺寸動線與材質作法。', icon: 'tabler:ruler-measure' },
+      { title: '3. 圖面與正式報價', description: '依設計圖或需求提供分項報價與材料規格。', icon: 'tabler:file-description' },
+      { title: '4. 簽約與工期排程', description: '約定里程碑與付款節點，進場前預告。', icon: 'tabler:calendar-event' },
+      { title: '5. 施作與階段驗收', description: '水電隱蔽、木作結構等關鍵工序，共同檢核。', icon: 'tabler:clipboard-check' },
+      { title: '6. 完工交屋與保固', description: '說明保固範圍與注意事項，後續維修服務。', icon: 'tabler:home-check' },
     ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1552664688-cf412ec27db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-      alt: 'Benefits Image',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Benefits</h3>
-    </Fragment>
-  </Content>
+  />
 
-  <!-- Testimonials Widget *********** -->
-
+  <!-- Testimonials -->
   <Testimonials
-    title="Words from real customers"
+    title="客戶見證"
     testimonials={[
       {
-        testimonial: `The designs are not only visually appealing but also highly professional. The templates have saved me a significant amount of time while helping me make a lasting impression on my clients.`,
-        name: 'Emily Kennedy',
-        job: 'Front-end developer',
-        image: {
-          src: 'https://images.unsplash.com/photo-1618835962148-cf177563c6c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=930&q=80',
-          alt: 'Emily Kennedy Image',
-        },
+        testimonial:
+          '報價與規格明確，工地管理有制度，階段驗收都能清楚解釋，交屋後服務也很即時。',
+        name: '黃先生',
+        job: '屋主｜桃園',
       },
       {
-        testimonial: `It beautifully showcases my work, with its clean and elegant design that lets my photographs shine. Customization was a breeze, even for a non-tech person like me. The result is a professional and immersive portfolio that's garnered numerous compliments.`,
-        name: 'Sarah Hansen',
-        job: 'Photographer',
-        image: {
-          src: 'https://images.unsplash.com/photo-1561406636-b80293969660?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-          alt: 'Sarah Hansen Image',
-        },
+        testimonial: '臨時變更也能彈性協助，配合度很高，施工品質穩定。',
+        name: 'W Design',
+        job: '合作設計師',
       },
       {
-        testimonial: `I discovered these templates and I'm impressed by their variety and quality. They've helped me establish a consistent brand image across my marketing and social platforms, elevating my business's overall appearance.`,
-        name: 'Mark Wilkinson',
-        job: 'Small business owner',
-        image: {
-          src: 'https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=824&q=80',
-          alt: 'Mark Wilkinson Image',
-        },
+        testimonial: '商辦改造如期完工，與大樓管理協調良好，值得信賴。',
+        name: '陳小姐',
+        job: '企業客戶',
       },
     ]}
-    callToAction={{
-      target: '_blank',
-      text: 'More testimonials...',
-      href: 'https://github.com/arthelokyo/astrowind',
-      icon: 'tabler:chevron-right',
-    }}
   />
 
-  <!-- CallToAction Widget *********** -->
-
+  <!-- CTA -->
   <CallToAction
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Start exploring',
-        href: '/',
-      },
-    ]}
-    title="Dive into our template collection"
-    subtitle="Whether you're in business, design, or education, our templates are here to elevate your projects."
+    actions={[{ variant: 'primary', text: '預約免費現勘', href: '/contact' }]}
+    title="想開始規劃嗎？"
+    subtitle="留下聯絡方式與基本需求，1–2 個工作日內回覆。"
   />
 </Layout>
+

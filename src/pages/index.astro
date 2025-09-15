@@ -2,398 +2,232 @@
 import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
-import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
-import Steps from '~/components/widgets/Steps.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
 import Content from '~/components/widgets/Content.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import ItemGrid from '~/components/ui/ItemGrid.astro';
 
 const metadata = {
-  title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
-  ignoreTitleTemplate: true,
+  title: '大鋒工程｜室內裝修與木作整合',
+  description:
+    '設計師與屋主信賴的施工團隊，從丈量、估價、進度控管到完工保固，一站式負責。',
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+  <!-- Hero：首頁主視覺 -->
 
   <Hero
     actions={[
-      {
-        variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/arthelokyo/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
-      },
-      { text: 'Learn more', href: '#features' },
+      { variant: 'primary', text: '預約現勘/估價', href: '/contact', icon: 'tabler:calendar-check' },
+      { text: '看作品集', href: '/portfolio' },
     ]}
-    image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
+    image={{ src: '~/assets/images/hero-image.png', alt: '大鋒工程 室內裝修與木作' }}
   >
     <Fragment slot="title">
-      Free template for <span class="hidden xl:inline">creating websites with</span>
-      <span class="text-accent dark:text-white"> Astro 5.0</span> + Tailwind CSS
+      大鋒工程<br class="block sm:hidden" />室內裝修與木作整合
     </Fragment>
-
     <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 5.0
-        + Tailwind CSS.</span
-      >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span>
-      Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages &
-      Blogs.
+      設計師與屋主指定的施工夥伴｜從丈量、報價、進度控管到完工保固，
+      一次到位的專業團隊。
     </Fragment>
   </Hero>
 
-  <!-- Note Widget ******************* -->
-
-  <Note title="Philosophy:" description="Simplicity, Best Practices and High Performance" />
-
-  <!-- Features Widget *************** -->
+  <!-- 核心優勢 -->
 
   <Features
     id="features"
-    tagline="Features"
-    title="What you get with AstroWind"
-    subtitle="One of the most professional and comprehensive templates currently on the market. Most starred & forked Astro theme in 2022, 2023 and 2024."
+    tagline="核心優勢"
+    title="把設計交給我們安心落地"
+    subtitle="透明流程 × 穩定工班 × 高標準品質"
     items={[
       {
-        title: 'Astro + Tailwind CSS Integration',
-        description:
-          'A seamless integration between two great frameworks that offer high productivity, performance and versatility.',
-        icon: 'tabler:brand-tailwind',
+        title: '一站式整合',
+        description: '木作、泥作、水電、油漆、玻璃鐵件統包協調，單一窗口負責到底。',
+        icon: 'tabler:box-multiple',
       },
       {
-        title: 'Ready-to-use Components',
-        description:
-          'Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
-        icon: 'tabler:components',
+        title: '報價清楚透明',
+        description: '分項明細與用料規格完整揭示，變更加價先溝通再施作。',
+        icon: 'tabler:receipt-2',
       },
       {
-        title: 'Best Practices',
-        description:
-          'Creating secure, efficient, and user-friendly websites that deliver exceptional experiences and lasting value.',
-        icon: 'tabler:list-check',
+        title: '工期嚴謹控管',
+        description: '以里程碑管理關鍵工序，即時回報現場狀況，準時完工。',
+        icon: 'tabler:timeline',
       },
       {
-        title: 'Excellent Page Speed',
-        description:
-          'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
-        icon: 'tabler:rocket',
+        title: '品質驗收標準',
+        description: '木作收邊、垂直水平、接縫與表面平整度皆有書面標準。',
+        icon: 'tabler:checklist',
       },
       {
-        title: 'Search Engine Optimization (SEO)',
-        description:
-          "SEO lies in its ability to enhance a website's visibility, driving organic traffic and enabling it to reach a wider audience.",
-        icon: 'tabler:arrows-right-left',
+        title: '工地安全與清潔',
+        description: '每日收整工區、妥善防塵與養護，完工交屋前專業清潔。',
+        icon: 'tabler:shield-check',
       },
       {
-        title: 'Open to new ideas and contributions',
-        description:
-          'Embracing a culture that is open to new ideas and contributions is integral fostering innovation, collaboration, and a dynamic user experience.',
-        icon: 'tabler:bulb',
+        title: '完善保固',
+        description: '提供保固與到府售後服務，讓您入住無後顧之憂。',
+        icon: 'tabler:award',
       },
     ]}
   />
 
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    tagline="Inside template"
-    title="AstroWind's Blueprint: Fun Meets Functionality!"
-    items={[
-      {
-        title: 'Built on top of Astro 5.0',
-        description:
-          'Benefiting from the performance and developer-friendly features of this modern static site generator.',
-      },
-      {
-        title: 'Styled using Tailwind CSS',
-        description:
-          'Facilitating rapid design and consistent styling with this highly popular utility-first CSS framework.',
-      },
-      {
-        title: 'Cross-browser compatibility',
-        description:
-          'Ensure your website looks and functions consistently across various web browsers, delivering a seamless experience to all users.',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Colorful Image',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on modern foundations</h3>
-      Gain a competitive advantage by incorporating industry leading practices
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isAfterContent
-    items={[
-      {
-        title: 'High level of customization',
-        description: `Tailor the template effortlessly to match your brand's identity and requirements, making your website distinct and saving you time.`,
-      },
-      {
-        title: 'Multiple layout possibilities',
-        description:
-          'Explore various layout options to find the structure that best presents your content, enhancing user engagement and navigation.',
-      },
-      {
-        title: 'Fully responsive design',
-        description:
-          "Ensure your website's optimal performance on various devices and screen sizes, providing a consistent and enjoyable user experience.",
-      },
-      {
-        title: 'Integration of media',
-        description:
-          'Seamlessly incorporate images, videos, and multimedia elements that enhance your content and engage visitors effectively.',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
-      alt: 'Blueprint Image',
-    }}
-  >
-    <Fragment slot="content">Ensure your online presence truly represents you.</Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    isAfterContent
-    items={[
-      {
-        title: 'Enhanced user engagement',
-        description:
-          'Captivate your audience with interactive elements, intuitive navigation, and visually appealing layouts, encouraging longer visits.',
-      },
-      {
-        title: 'Continuous improvement',
-        description:
-          'Ensure your website stays aligned with the latest trends and technologies through regular updates and enhancements.',
-      },
-      {
-        title: 'Time and resource efficiency',
-        description:
-          'Skip the time-consuming process of building a website from scratch and launch your online presence sooner with AstroWind.',
-      },
-      {
-        title: 'Community support',
-        description: `Join the growing AstroWind community for insights, resources, and assistance, ensuring you're never alone on your web development journey.`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Astronauts Image',
-    }}
-  >
-    <Fragment slot="content">Designed to foster growth and success.</Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Steps Widget ****************** -->
-
-  <Steps
-    title="Get your dream website up and running in no time with AstroWind."
-    items={[
-      {
-        title: 'Step 1: <span class="font-medium">Download</span>',
-        description:
-          "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation.",
-        icon: 'tabler:package',
-      },
-      {
-        title: 'Step 2: <span class="font-medium">Add content</span>',
-        description:
-          "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating.",
-        icon: 'tabler:letter-case',
-      },
-      {
-        title: 'Step 3: <span class="font-medium">Customize styles</span>',
-        description:
-          'Give it your personal touch. Tailor colors, fonts, and layouts until it feels just right. Your unique flair, amplified by AstroWind! Precision in design ensures a seamless user experience.',
-        icon: 'tabler:paint',
-      },
-      {
-        title: 'Ready!',
-        icon: 'tabler:check',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-      alt: 'Steps image',
-    }}
-  />
-
-  <!-- Features2 Widget ************** -->
-
+  <!-- 核心服務 -->
   <Features2
-    title="Most used widgets"
-    subtitle="Provides frequently used components for building websites using Tailwind CSS"
-    tagline="Components"
+    tagline="核心服務"
+    title="住宅與商空全面承作"
+    subtitle="從局部改善到整體翻新，依需求彈性搭配"
     items={[
       {
-        title: 'Headers',
-        description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
-        icon: 'flat-color-icons:template',
+        title: '室內裝修統包',
+        description: '格局調整、隔間、門片、地坪、天花、油漆與軟裝整合。',
+        icon: 'tabler:home-cog',
       },
       {
-        title: 'Heros',
-        description:
-          "Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!",
-        icon: 'flat-color-icons:gallery',
+        title: '木作與系統櫃',
+        description: '電視牆、收納櫃、衣櫃與床架；手作木工與系統板材皆可。',
+        icon: 'tabler:wood',
       },
       {
-        title: 'Features',
-        description:
-          'Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!',
-        icon: 'flat-color-icons:approval',
+        title: '水電/泥作/油漆',
+        description: '配管配線、衛浴與磁磚、批土與塗裝，工序密合與美觀兼顧。',
+        icon: 'tabler:tools',
       },
       {
-        title: 'Content',
-        description:
-          "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
-        icon: 'flat-color-icons:document',
+        title: '玻璃鐵件/地板/窗簾',
+        description: '強化玻璃、烤漆鐵件、超耐磨地板、百葉與遮光簾一次到位。',
+        icon: 'tabler:layers-intersect',
       },
       {
-        title: 'Call-to-Action',
-        description:
-          'That enthusiastic friend who\'s always urging, "Do it! Do it!"? Yeah, that\'s this button nudging you towards adventure.',
-        icon: 'flat-color-icons:advertising',
+        title: '老屋翻修與管線更新',
+        description: '結構評估、廚衛更新、配電與防漏處理，安全第一。',
+        icon: 'tabler:building-warehouse',
       },
       {
-        title: 'Pricing',
-        description: 'Behold the dessert menu of the website world. Tempting choices await, can you resist?',
-        icon: 'flat-color-icons:currency-exchange',
-      },
-      {
-        title: 'Testimonial',
-        description: 'Step into the gossip corner! Here, other visitors spill the beans and share the juicy details.',
-        icon: 'flat-color-icons:voice-presentation',
-      },
-      {
-        title: 'Contact',
-        description:
-          'Like a digital mailbox, but faster! Drop a line, ask a question, or send a virtual high-five. Ding! Message in.',
-        icon: 'flat-color-icons:business-contact',
-      },
-      {
-        title: 'Footers',
-        description: "The footer's like the credits of a movie but sprinkled with easter eggs. Time to hunt!",
-        icon: 'flat-color-icons:database',
+        title: '設計配合與3D',
+        description: '可配合設計師或提供3D示意，協助您預先想像成果。',
+        icon: 'tabler:box-align-top-left',
       },
     ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2>
-
-  <!-- HighlightedPosts Widget ******* -->
-
-  <BlogLatestPosts
-    title="Find out more content in our Blog"
-    information={`The blog is used to display AstroWind documentation.
-                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
-                        Astro is a very interesting technology. Thanks.
-                `}
   />
 
-  <!-- FAQs Widget ******************* -->
+  <!-- 案例展示 -->
+  <section class="relative w-full py-16 md:py-24 lg:py-28">
+    <div class="container">
+      <div class="mx-auto max-w-3xl text-center">
+        <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl">案例展示</h2>
+        <p class="mt-4 text-muted">精選住宅與商空實績，更多請看完整作品集。</p>
+      </div>
 
+      <div class="mt-10">
+        <ItemGrid
+          columns={3}
+          items={[
+            {
+              title: '內湖｜現代簡約宅',
+              description: '電視主牆、系統收納與臥室衣櫃',
+              callToAction: { text: '查看個案', href: '/portfolio/neihu-modern' },
+            },
+            {
+              title: '信義區｜辦公室改造',
+              description: '玻璃隔間、公共區域動線優化',
+              callToAction: { text: '查看個案', href: '/portfolio/xinyi-office' },
+            },
+            {
+              title: '新竹｜Loft 風格宅',
+              description: '開放式廚房與鐵件木作',
+              callToAction: { text: '查看個案', href: '/portfolio/hsinchu-loft' },
+            },
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- 服務流程（精簡版） -->
+  <Steps2
+    tagline="流程"
+    title="從諮詢到交屋，我們陪你走完全程"
+    items={[
+      { title: '1. 線上諮詢與初估', description: '瞭解需求與預算範圍，提供大致工法與建議。', icon: 'tabler:message-check' },
+      { title: '2. 現場丈量與討論', description: '安排到府勘查、確認尺寸與動線，蒐集細節。', icon: 'tabler:ruler-measure' },
+      { title: '3. 圖面與正式報價', description: '依設計圖或需求列出分項明細與材料規格。', icon: 'tabler:file-description' },
+      { title: '4. 簽約與排程', description: '確認工期里程碑與付款節點，進場前預告。', icon: 'tabler:calendar-event' },
+      { title: '5. 施作與階段驗收', description: '重要工序到場說明，完工前共同檢核缺失。', icon: 'tabler:clipboard-check' },
+      { title: '6. 交屋與保固', description: '完工交付文件與保固說明，後續服務不間斷。', icon: 'tabler:home-check' },
+    ]}
+  />
+
+  <!-- 客戶見證 -->
+  <Testimonials
+    title="客戶見證"
+    testimonials={[
+      {
+        testimonial:
+          '與設計師三方溝通順暢，工地管理有條理，進度與品質都如預期，入住後也協助快速排除小問題。',
+        name: '林先生',
+        job: '屋主｜新北新成屋',
+      },
+      {
+        testimonial:
+          '木作細節很到位，轉角與收邊都處理得很好，收納使用起來很順手。',
+        name: '周小姐',
+        job: '屋主｜台北舊屋翻新',
+      },
+      {
+        testimonial:
+          '商空改造期間仍需營運，團隊協助分區分段施工，把影響降到最低，十分專業。',
+        name: '張經理',
+        job: '企業客戶｜辦公室',
+      },
+    ]}
+  />
+
+  <!-- 常見問題 -->
   <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
-    tagline="FAQs"
+    title="常見問題 FAQ"
+    tagline="FAQ"
     classes={{ container: 'max-w-6xl' }}
     items={[
       {
-        title: 'Why AstroWind?',
-        description:
-          "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
+        title: '估價需要準備什麼資料？',
+        description: '若已有設計圖請提供；若尚未設計，請先告知坪數、格局與需求大綱與預算，方便初估。',
       },
       {
-        title: 'What do I need to start?',
-        description:
-          'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
+        title: '工期大約多久？',
+        description: '依規模而定，單一空間 2–4 週，整屋 6–12 週，實際以現場評估與排程為準。',
       },
       {
-        title: 'How to install the Astro + Tailwind CSS template?',
-        description:
-          "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.",
+        title: '報價是否會追加？',
+        description: '正式報價含明細，若需求變更或現場突發需追加，皆會先溝通同意後才施作。',
       },
       {
-        title: "What's something that you don't understand?",
-        description:
-          "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
+        title: '有提供保固嗎？',
+        description: '完工提供保固服務，木作、油漆、水電等依項目不同有對應期程，交屋時會書面說明。',
       },
       {
-        title: 'What is something that you would like to try again?',
-        description:
-          "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
+        title: '可以只做木作或部分工程嗎？',
+        description: '可以，我們接受單項工程委託，也能與既有設計/工班配合。',
       },
       {
-        title: 'If you could only ask one question to each person you meet, what would that question be?',
-        description:
-          "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
+        title: '付款方式與節點？',
+        description: '一般為簽約訂金、開工、進度款與尾款，依工程規模調整，於合約載明。',
       },
     ]}
   />
 
-  <!-- Stats Widget ****************** -->
-
-  <Stats
-    stats={[
-      { title: 'Downloads', amount: '132K' },
-      { title: 'Stars', amount: '24.8K' },
-      { title: 'Forks', amount: '10.3K' },
-      { title: 'Users', amount: '48.4K' },
-    ]}
-  />
-
-  <!-- CallToAction Widget *********** -->
-
+  <!-- 行動呼籲 -->
   <CallToAction
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/arthelokyo/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
-      },
-    ]}
+    actions={[{ variant: 'primary', text: '免費諮詢與現勘', href: '/contact' }]}
   >
-    <Fragment slot="title">
-      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
-      waste more time! :P
-    </Fragment>
+    <Fragment slot="title">把想要的家，交給專業團隊</Fragment>
+    <Fragment slot="subtitle">留下您的需求與聯絡方式，我們 1–2 個工作日回覆。</Fragment>
   </CallToAction>
 </Layout>
+

@@ -1,0 +1,50 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import ItemGrid from '~/components/ui/ItemGrid.astro';
+
+const metadata = {
+  title: '作品集｜大鋒工程',
+  description: '精選住宅與商業空間案例，展現細緻工藝與穩定品質。',
+};
+
+const items = [
+  {
+    title: '內湖｜現代簡約宅',
+    description: '住宅｜電視主牆、臥室衣櫃、系統收納',
+    callToAction: { text: '查看案例', href: '/portfolio/neihu-modern' },
+  },
+  {
+    title: '信義區｜辦公室改造',
+    description: '商業空間｜玻璃隔間、會議室、公共區域動線',
+    callToAction: { text: '查看案例', href: '/portfolio/xinyi-office' },
+  },
+  {
+    title: '新竹｜Loft 風格宅',
+    description: '住宅｜鐵件木作與開放式廚房',
+    callToAction: { text: '查看案例', href: '/portfolio/hsinchu-loft' },
+  },
+  {
+    title: '桃園｜機能收納宅',
+    description: '住宅｜系統櫃大量收納、油漆與窗飾',
+    callToAction: { text: '查看案例', href: '/portfolio/taoyuan-residence' },
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <section class="relative w-full py-16 md:py-24 lg:py-28">
+    <div class="container">
+      <div class="mx-auto max-w-3xl text-center">
+        <h1 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl">實力來自每一個現場</h1>
+        <p class="mt-4 text-muted-foreground">
+          大鋒工程深耕室內裝修多年，累積豐富現場經驗與跨工種協作能力。以下為精選案例，更多案件陸續整理中。
+        </p>
+      </div>
+
+      <div class="mt-10">
+        <ItemGrid items={items} columns={3} />
+      </div>
+    </div>
+  </section>
+</Layout>
+

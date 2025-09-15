@@ -1,0 +1,39 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+
+const metadata = {
+  title: '內湖｜現代簡約宅',
+  description: '住宅裝修：電視主牆、臥室衣櫃、系統收納與細節收邊',
+};
+---
+
+<Layout metadata={metadata}>
+  <Content
+    tagline="住宅空間"
+    title="現代簡約宅"
+    items={[
+      { title: '地點', description: '台北市內湖區' },
+      { title: '設計單位', description: 'XYZ 設計' },
+      { title: '施工內容', description: '電視主牆、臥室衣櫃、系統收納與木作細節' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1493804714600-6edb1cd93080?auto=format&fit=crop&w=1600&q=80',
+      alt: '現代簡約宅 完工主視覺',
+    }}
+  >
+    <Fragment slot="content">
+      精準轉譯設計意圖，注重比例與收邊，選用穩定耐用材料；
+      以嚴謹工序與現場管理，讓機能與美感相得益彰。
+    </Fragment>
+  </Content>
+
+  <section class="container py-10">
+    <div class="grid gap-6 md:grid-cols-3">
+      <img class="rounded-lg" src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80" alt="完工細節 1" />
+      <img class="rounded-lg" src="https://images.unsplash.com/photo-1505692794403-34d4982f88aa?auto=format&fit=crop&w=1200&q=80" alt="完工細節 2" />
+      <img class="rounded-lg" src="https://images.unsplash.com/photo-1591453253329-30b8d3590b7b?auto=format&fit=crop&w=1200&q=80" alt="木作細節特寫" />
+    </div>
+  </section>
+</Layout>
+
