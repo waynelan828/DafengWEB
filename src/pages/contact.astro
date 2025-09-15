@@ -5,74 +5,70 @@ import ContactUs from '~/components/widgets/Contact.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
-  title: 'Contact',
+  title: '聯絡我們',
+  description: '歡迎填寫表單或來信洽詢，專人將盡快回覆。',
 };
 ---
 
 <Layout metadata={metadata}>
   <!-- HeroText Widget ******************* -->
 
-  <HeroText tagline="Contact" title="Let's Connect!" />
+  <HeroText tagline="Contact" title="期待與您攜手，共創卓越空間" />
 
   <ContactUs
     id="form"
-    title="Drop us a message today!"
-    subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, our support team is delighted to help you."
+    title="請填寫以下表單，我們將盡快與您聯繫"
+    subtitle="若有緊急需求可直接來信至 info@nice8.works"
     inputs={[
       {
         type: 'text',
         name: 'name',
-        label: 'Name',
+        label: '姓名',
       },
       {
         type: 'email',
         name: 'email',
-        label: 'Email',
+        label: '電子郵件',
+      },
+      {
+        type: 'tel',
+        name: 'phone',
+        label: '聯絡電話',
+      },
+      {
+        type: 'text',
+        name: 'company',
+        label: '公司/設計事務所',
       },
     ]}
     textarea={{
-      label: 'Message',
+      label: '需求描述',
     }}
     disclaimer={{
-      label:
-        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
+      label: '送出即代表您同意我們蒐集與處理聯絡資訊以回覆您的需求。',
     }}
-    description="Our support team typically responds within 24 business hours."
+    description="一般在1個工作日內回覆。營業時間：週一至週五 08:00–17:00"
   />
 
   <!-- Features2 Widget ************** -->
 
   <Features2
-    title="We are here to help!"
+    title="聯絡資訊"
     items={[
       {
-        title: 'General support',
-        description: `Chat with us for inquiries related to account management, website navigation, payment issues, accessing purchased templates or general questions about the website's functionality.`,
-      },
-      {
-        title: 'Contact sales',
-        description:
-          'Chat with us for questions about purchases, customization options, licensing for commercial use, inquiries about specific template, etc.',
-      },
-      {
-        title: 'Technical support',
-        description:
-          'Chat with us when facing issues like template installation, problems editing difficulties, compatibility issues with software or download errors, or other technical challenges related to using the templates.',
-      },
-      {
-        title: 'Phone',
-        description: '+1 (234) 567-890',
-        icon: 'tabler:headset',
-      },
-      {
         title: 'Email',
-        description: 'contact@support.com',
+        description: 'info@nice8.works',
         icon: 'tabler:mail',
       },
       {
-        title: 'Location',
-        description: '1234 Lorem Ipsum St, 12345, Miami, EEUU',
+        title: '地址',
+        description: '新北市中和區板南路520巷5號',
         icon: 'tabler:map-pin',
+      },
+      {
+        title: '營業時間',
+        description: '週一至週五 08:00 - 17:00',
+        icon: 'tabler:clock',
       },
     ]}
   />

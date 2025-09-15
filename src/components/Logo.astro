@@ -3,16 +3,25 @@ import { SITE } from 'astrowind:config';
 ---
 
 <a href="/" class="flex items-center">
+  <!-- Light theme logo -->
   <img
     src="/brand/logo.png"
     alt={SITE?.name || 'Logo'}
-    class="h-8 w-auto hidden"
-    onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block'"
-    onload="this.style.display='inline-block'; this.nextElementSibling.style.display='none'"
+    class="h-8 w-auto hidden dark:hidden"
+    onerror="this.style.display='none'"
+    onload="this.style.display='inline-block'; const t=document.getElementById('brand-text'); if(t) t.style.display='none'"
+  />
+  <!-- Dark theme logo (optional) -->
+  <img
+    src="/brand/logo-dark.png"
+    alt={SITE?.name || 'Logo'}
+    class="h-8 w-auto hidden dark:inline"
+    onerror="this.style.display='none'"
+    onload="this.style.display='inline-block'; const t=document.getElementById('brand-text'); if(t) t.style.display='none'"
   />
   <span
+    id="brand-text"
     class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
     >{SITE?.name}</span
   >
 </a>
-

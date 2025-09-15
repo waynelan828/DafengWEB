@@ -7,7 +7,8 @@ import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
-  title: 'About us',
+  title: '關於我們｜大鋒室內裝修工程有限公司',
+  description: '匠心獨具，築夢踏實。專為設計師提供專業、效率、安心的木作工程服務。',
 };
 ---
 
@@ -15,61 +16,44 @@ const metadata = {
   <!-- Hero Widget ******************* -->
 
   <Hero
-    tagline="About us"
+    tagline="About Us"
     image={{
-      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Caos Image',
+      src: 'https://images.unsplash.com/photo-1591453253329-30b8d3590b7b?q=80&w=1600&auto=format&fit=crop',
+      alt: '木作工藝特寫',
     }}
   >
-    <Fragment slot="title">
-      Elevate your online presence with our <br />
-      <span class="text-accent dark:text-white"> Beautiful Website Templates</span>
-    </Fragment>
-
+    <Fragment slot="title">匠心獨具，築夢踏實</Fragment>
     <Fragment slot="subtitle">
-      Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec
-      quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus.
-      Suspendisse vitae nisi eget tortor luctus maximus sed non lectus.
+      我們不僅是工班，更是您值得信賴的專業夥伴。以精湛木作工藝與嚴謹施工管理，將設計藍圖精準轉化為真實空間。
     </Fragment>
   </Hero>
 
   <!-- Stats Widget ****************** -->
 
-  <Stats
-    title="Statistics about us"
-    stats={[
-      { title: 'Offices', amount: '4' },
-      { title: 'Employees', amount: '248' },
-      { title: 'Templates', amount: '12' },
-      { title: 'Awards', amount: '24' },
-    ]}
-  />
+  <!-- 可於未來加入真實數據（里程碑、完工案量等） -->
 
   <!-- Features3 Widget ************** -->
 
   <Features3
-    title="Our templates"
-    subtitle="Etiam scelerisque, enim eget vestibulum luctus, nibh mauris blandit nulla, nec vestibulum risus justo ut enim. Praesent lacinia diam et ante imperdiet euismod."
+    title="公司理念與願景"
+    subtitle="誠信、品質、創新、共好——四大核心價值，貫穿每個專案。"
     columns={3}
     isBeforeContent={true}
     items={[
       {
-        title: 'Educational',
-        description:
-          'Morbi faucibus luctus quam, sit amet aliquet felis tempor id. Cras augue massa, ornare quis dignissim a, molestie vel nulla.',
-        icon: 'tabler:template',
+        title: '專業為本',
+        description: '深厚的圖面判讀與現場應變能力，讓施工與設計無縫接軌。',
+        icon: 'tabler:certificate',
       },
       {
-        title: 'Interior Design',
-        description:
-          'Vivamus porttitor, tortor convallis aliquam pretium, turpis enim consectetur elit, vitae egestas purus erat ac nunc nulla.',
-        icon: 'tabler:template',
+        title: '品質至上',
+        description: '選材嚴謹、收邊細膩，確保工程品質與使用安全。',
+        icon: 'tabler:shield-check',
       },
       {
-        title: 'Photography',
-        description:
-          'Duis sed lectus in nisl vehicula porttitor eget quis odio. Aliquam erat volutpat. Nulla eleifend nulla id sem fermentum.',
-        icon: 'tabler:template',
+        title: '高效協作',
+        description: '與設計師密切溝通、回報透明，讓進度掌握更安心。',
+        icon: 'tabler:messages',
       },
     ]}
   />

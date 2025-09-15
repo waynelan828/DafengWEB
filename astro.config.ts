@@ -85,6 +85,8 @@ export default defineConfig({
     decapCmsOauth(), // ✅ 加上 Decap CMS OAuth
   ],
 
+  site: 'https://nice8.works',
+
   image: {
     domains: ['cdn.pixabay.com'],
   },
