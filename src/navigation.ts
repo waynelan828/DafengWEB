@@ -1,4 +1,4 @@
-import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
+import { getPermalink, getBlogPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
@@ -24,13 +24,6 @@ export const footerData = {
       ],
     },
     {
-      title: '法律資訊',
-      links: [
-        { text: '條款', href: getPermalink('/terms') },
-        { text: '隱私權政策', href: getPermalink('/privacy') },
-      ],
-    },
-    {
       title: '聯絡資訊',
       links: [
         { text: 'Email: info@nice8.works', href: 'mailto:info@nice8.works' },
@@ -39,7 +32,10 @@ export const footerData = {
       ],
     },
   ],
-  secondaryLinks: [{ text: 'RSS', href: getAsset('/rss.xml') }],
+  secondaryLinks: [
+    { text: '條款', href: getPermalink('/terms') },
+    { text: '隱私權政策', href: getPermalink('/privacy') },
+  ],
   socialLinks: [],
   footNote: `
     © 大鋒工程 Da Feng Interior · All rights reserved.
