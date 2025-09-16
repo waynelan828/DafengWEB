@@ -58,7 +58,8 @@ const normalizedSlides = slides
       <div class="relative w-full">
         <div class="pt-0 md:pt-[76px] pointer-events-none" />
         <swiper-container
-          class="hero-carousel block h-screen w-full"
+          ref={el => (swiperRef = el)}
+          class="hero-carousel relative block h-screen w-full"
           effect="fade"
           speed="800"
           autoplay-delay={autoplayDelay}
@@ -71,6 +72,16 @@ const normalizedSlides = slides
               : { pagination: 'false', 'pagination-clickable': 'false' }
           }
         >
+          <div class="absolute inset-0 z-20 flex" aria-hidden="true">
+            <div
+              class="z-20 h-full w-1/2 cursor-pointer bg-transparent"
+              on:click={() => swiperRef?.swiper.slidePrev()}
+            />
+            <div
+              class="z-20 h-full w-1/2 cursor-pointer bg-transparent"
+              on:click={() => swiperRef?.swiper.slideNext()}
+            />
+          </div>
           {normalizedSlides.map((slide) => {
             const { src, alt, ...imageProps } = slide.image;
 
@@ -124,6 +135,8 @@ const normalizedSlides = slides
 }
 
 <script is:inline>
+  let swiperRef: HTMLElement | null = null;
+
   if (typeof window !== 'undefined') {
     const styleId = 'aw-swiper-style';
     const scriptId = 'aw-swiper-script';
