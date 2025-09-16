@@ -3,118 +3,108 @@ title: 'Terms and Conditions'
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 
-_Last updated_: January 06, 2023
+_最後更新_：2024 年 5 月 1 日
 
-Please read these terms and conditions carefully before using Our Service.
+歡迎使用大風網路科技股份有限公司（以下簡稱「本公司」）所提供之網站與相關線上服務（以下統稱「本服務」）。請您於使用前詳細閱讀本條款與條件（以下簡稱「本條款」），當您登入、造訪或使用本服務，即表示您已閱讀、瞭解並同意受本條款之拘束。如您不同意全部或部分內容，請立即停止使用本服務。
 
-## Interpretation and Definitions
+## 解釋與定義
 
-### Interpretation
+### 解釋
 
-The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.
+除非上下文另有定義，本條款中所用名詞之意義與台灣相關法律一致。單數含括複數，反之亦然，並包含任何性別。
 
-### Definitions
+### 定義
 
-For the purposes of these Terms and Conditions:
+為方便起見，本條款中下列用語具有以下意義：
 
-- **Affiliate** means an entity that controls, is controlled by or is under common control with a party, where "control" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.
+- **本公司**：指大風網路科技股份有限公司，統一編號 12345678，位於台北市信義區信義路五段 7 號 19 樓。
+- **使用者**：指任何存取或使用本服務之自然人、法人或其他組織，亦包括代表他人使用本服務者。
+- **本服務**：指本公司營運之網站、行動裝置應用程式、電子報、活動及其衍生服務。
+- **內容**：指於本服務上呈現或儲存之所有資料，包括文字、圖像、影音、程式碼、檔案與其他資訊。
+- **帳戶**：指使用者為使用本服務而建立之身分識別，包括登入資訊與使用設定。
 
-- **Country** refers to: California, United States
+## 使用服務之確認
 
-- **Company** (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to AstroWind LLC, 1 Cupertino, CA 95014.
+您應具備完全行為能力方得使用本服務。如您為未滿二十歲之限制行為能力人，請於法定代理人或監護人之同意並於其監督下使用本服務。本公司保留要求提供相關證明之權利。
 
-- **Device** means any device that can access the Service such as a computer, a cellphone or a digital tablet.
+## 服務內容
 
-- **Service** refers to the Website.
+本服務提供之功能、資訊與內容以網站實際呈現為準。本公司得視營運需求隨時新增、調整、暫停或終止部分或全部功能，並於必要時透過網站公告、電子郵件或其他適當方式通知。
 
-- **Terms and Conditions** (also referred as "Terms") mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service. This Terms and Conditions agreement is a Demo.
+## 帳戶註冊與安全
 
-- **Third-party Social Media Service** means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.
+為使用特定功能，您可能需要建立帳戶並提供真實、正確、最新且完整之資料。您並應妥善保管登入憑證，不得提供、揭露或轉讓予第三人。若因您的疏忽或帳戶遭未經授權之使用而生損害，應由您自行負責；如因此造成本公司或他人損害，您亦應負賠償責任。
 
-- **Website** refers to AstroWind, accessible from [https://astrowind.vercel.app](https://astrowind.vercel.app)
+## 費用與付款
 
-- **You** means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.
+本服務目前為免費提供；惟本公司得於未來引進付費方案或增值服務，相關費用、付款條件與計費方式將另行公告。若您選擇使用付費服務，即表示您同意適用之付款與退款政策。
 
-## Acknowledgment
+## 使用者義務
 
-These are the Terms and Conditions governing the use of this Service and the agreement that operates between You and the Company. These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service.
+您同意遵守中華民國（台灣）相關法令、本條款及網路倫理，並於使用本服務時遵守以下規範：
 
-Your access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms and Conditions. These Terms and Conditions apply to all visitors, users and others who access or use the Service.
+### 禁止行為
 
-By accessing or using the Service You agree to be bound by these Terms and Conditions. If You disagree with any part of these Terms and Conditions then You may not access the Service.
+- 不得從事侵害或可能侵害他人智慧財產權、名譽、隱私或其他權益之行為。
+- 不得上傳、散布任何違法、誹謗、猥褻、暴力、詐欺、侵害第三人權益或違反公共秩序與善良風俗之內容。
+- 不得利用本服務傳送垃圾郵件、惡意程式、病毒、木馬、蠕蟲或任何可能影響系統運作之程式碼。
+- 不得以自動化方式存取或蒐集本服務之資料，或透過逆向工程、探勘等行為破壞或干擾系統。
+- 不得冒用他人身分或偽造傳輸來源，或為任何不法目的使用本服務。
 
-You represent that you are over the age of 18\. The Company does not permit those under 18 to use the Service.
+如您違反上述約定，本公司得視情節採取必要措施，包括但不限於限制使用、移除內容、暫停或終止帳戶，並請求損害賠償。
 
-Your access to and use of the Service is also conditioned on Your acceptance of and compliance with the Privacy Policy of the Company. Our Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your personal information when You use the Application or the Website and tells You about Your privacy rights and how the law protects You. Please read Our Privacy Policy carefully before using Our Service.
+## 智慧財產權
 
-## Links to Other Websites
+本服務所提供之所有內容與技術，包括但不限於文字、圖片、影音、程式碼、商標、標誌及商業外觀，均屬本公司或合法授權之權利人所有。除法律另有規定或經本公司書面同意，您不得重製、改作、散布、公開播送、公開展示或以其他方式利用本服務內容。
 
-Our Service may contain links to third-party web sites or services that are not owned or controlled by the Company.
+## 第三方服務與外部連結
 
-The Company has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that the Company shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods or services available on or through any such web sites or services.
+本服務可能包含第三方網站或服務之連結，僅為方便您使用而設。本公司對該等第三方之內容或行為不負責任，亦不為之背書。您使用第三方服務時，應自行審閱並遵守其使用條款與隱私權政策。
 
-We strongly advise You to read the terms and conditions and privacy policies of any third-party web sites or services that You visit.
+## 服務之變更、暫停或終止
 
-## Termination
+若遇系統維護、更新、測試或不可抗力因素，本公司得暫停或終止全部或部分服務。本公司將盡合理努力於事前或事後透過網站公告或電子郵件等方式通知您，但於緊急情形下得不及通知。因服務調整或中斷所致之任何損害，本公司不負賠償責任；惟如依法律應負之責任不在此限。
 
-We may terminate or suspend Your access immediately, without prior notice or liability, for any reason whatsoever, including without limitation if You breach these Terms and Conditions.
+## 免責聲明
 
-Upon termination, Your right to use the Service will cease immediately.
+本服務係依「現況」提供，本公司對其適用性、可靠性、即時性、完整性或是否符合您的特定需求不作任何明示或默示之擔保。您應自行評估使用本服務所涉之風險。
 
-## Limitation of Liability
+## 責任限制
 
-Notwithstanding any damages that You might incur, the entire liability of the Company and any of its suppliers under any provision of this Terms and Your exclusive remedy for all of the foregoing shall be limited to the amount actually paid by You through the Service or 100 USD if You haven't purchased anything through the Service.
+在法律允許之最大範圍內，本公司對於因使用或無法使用本服務所生之任何直接、間接、附帶、衍生、懲罰性或特殊損害概不負責。若法律要求本公司負賠償責任，除故意或重大過失外，本公司之總賠償金額以您於近十二個月內因特定付費服務支付予本公司之實際費用為上限。
 
-To the maximum extent permitted by applicable law, in no event shall the Company or its suppliers be liable for any special, incidental, indirect, or consequential damages whatsoever (including, but not limited to, damages for loss of profits, loss of data or other information, for business interruption, for personal injury, loss of privacy arising out of or in any way related to the use of or inability to use the Service, third-party software and/or third-party hardware used with the Service, or otherwise in connection with any provision of this Terms), even if the Company or any supplier has been advised of the possibility of such damages and even if the remedy fails of its essential purpose.
+## 不可抗力
 
-Some states do not allow the exclusion of implied warranties or limitation of liability for incidental or consequential damages, which means that some of the above limitations may not apply. In these states, each party's liability will be limited to the greatest extent permitted by law.
+如因天災、戰爭、恐怖行動、政府命令、通訊障礙、第三方供應商故障或其他不可歸責於本公司之事由，致本公司無法履行本條款義務者，本公司得暫停履行並於原因消滅後恢復，且於法律允許之範圍內不負賠償責任。
 
-## "AS IS" and "AS AVAILABLE" Disclaimer
+## 準據法與管轄權
 
-The Service is provided to You "AS IS" and "AS AVAILABLE" and with all faults and defects without warranty of any kind. To the maximum extent permitted under applicable law, the Company, on its own behalf and on behalf of its Affiliates and its and their respective licensors and service providers, expressly disclaims all warranties, whether express, implied, statutory or otherwise, with respect to the Service, including all implied warranties of merchantability, fitness for a particular purpose, title and non-infringement, and warranties that may arise out of course of dealing, course of performance, usage or trade practice. Without limitation to the foregoing, the Company provides no warranty or undertaking, and makes no representation of any kind that the Service will meet Your requirements, achieve any intended results, be compatible or work with any other software, applications, systems or services, operate without interruption, meet any performance or reliability standards or be error free or that any errors or defects can or will be corrected.
+本條款之解釋、效力與履行，以中華民國（台灣）法律為準據法。若因本條款或本服務發生任何爭議，雙方同意以臺灣臺北地方法院為第一審管轄法院。
 
-Without limiting the foregoing, neither the Company nor any of the company's provider makes any representation or warranty of any kind, express or implied: (i) as to the operation or availability of the Service, or the information, content, and materials or products included thereon; (ii) that the Service will be uninterrupted or error-free; (iii) as to the accuracy, reliability, or currency of any information or content provided through the Service; or (iv) that the Service, its servers, the content, or e-mails sent from or on behalf of the Company are free of viruses, scripts, trojan horses, worms, malware, timebombs or other harmful components.
+## 爭議處理程序
 
-Some jurisdictions do not allow the exclusion of certain types of warranties or limitations on applicable statutory rights of a consumer, so some or all of the above exclusions and limitations may not apply to You. But in such a case the exclusions and limitations set forth in this section shall be applied to the greatest extent enforceable under applicable law.
+如您對本條款或本服務有任何疑義，請先透過下列聯絡方式與本公司聯繫，我們將於 14 個工作日內回覆並與您協調；若協商未果，雙方仍得依前條約定提起訴訟或尋求其他救濟。
 
-## Governing Law
+## 條款之變更
 
-The laws of the Country, excluding its conflicts of law rules, shall govern this Terms and Your use of the Service. Your use of the Application may also be subject to other local, state, national, or international laws.
+本公司得依營運或法令需求調整本條款內容，變更後將公布於本服務，並更新「最後更新」日期。重大變更時，本公司將以電子郵件或顯著方式通知您。若您於變更後仍持續使用本服務，即視為您已同意修訂內容。
 
-## Disputes Resolution
+## 可分性與權利不放棄
 
-If You have any concern or dispute about the Service, You agree to first try to resolve the dispute informally by contacting the Company.
+### 可分性
 
-## For European Union (EU) Users
+若本條款任何條文被有權機關認定為無效或不可執行，其餘條文仍具完全效力。無效部分將以最貼近原意且合法有效之條款取代。
 
-If You are a European Union consumer, you will benefit from any mandatory provisions of the law of the country in which you are resident in.
+### 權利不放棄
 
-## United States Legal Compliance
+本公司若未行使或延遲行使本條款之任何權利，並不構成對該權利之放棄；一旦本公司放棄行使任何權利，仍不影響其後續再次主張之權利。
 
-You represent and warrant that (i) You are not located in a country that is subject to the United States government embargo, or that has been designated by the United States government as a "terrorist supporting" country, and (ii) You are not listed on any United States government list of prohibited or restricted parties.
+## 通知與聯絡方式
 
-## Severability and Waiver
+如您對本條款有任何問題、請求或權利主張，歡迎透過下列方式聯絡我們：
 
-### Severability
+- 電子郵件：legal@dafeng.com.tw
+- 聯絡地址：110 台北市信義區信義路五段 7 號 19 樓（大風網路科技股份有限公司法務部）
+- 客服時間：週一至週五 09:00-18:00（國定假日除外）
 
-If any provision of these Terms is held to be unenforceable or invalid, such provision will be changed and interpreted to accomplish the objectives of such provision to the greatest extent possible under applicable law and the remaining provisions will continue in full force and effect.
-
-### Waiver
-
-Except as provided herein, the failure to exercise a right or to require performance of an obligation under these Terms shall not effect a party's ability to exercise such right or require such performance at any time thereafter nor shall the waiver of a breach constitute a waiver of any subsequent breach.
-
-## Translation Interpretation
-
-These Terms and Conditions may have been translated if We have made them available to You on our Service. You agree that the original English text shall prevail in the case of a dispute.
-
-## Changes to These Terms and Conditions
-
-We reserve the right, at Our sole discretion, to modify or replace these Terms at any time. If a revision is material We will make reasonable efforts to provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at Our sole discretion.
-
-By continuing to access or use Our Service after those revisions become effective, You agree to be bound by the revised terms. If You do not agree to the new terms, in whole or in part, please stop using the website and the Service.
-
-## Contact Us
-
-If you have any questions about these Terms and Conditions, You can contact us:
-
-- By email: somecoolemail@domain.com
+感謝您使用本服務。
