@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdf0d5" />
+      <stop offset="50%" stop-color="#f6d8a7" />
+      <stop offset="100%" stop-color="#d9a679" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#fff5e6" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#f5d8b8" stop-opacity="0.55" />
+      <stop offset="100%" stop-color="#d1a47c" stop-opacity="0.1" />
+    </radialGradient>
+    <linearGradient id="grain" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#c07c37" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#9e632e" stop-opacity="0.65" />
+    </linearGradient>
+    <linearGradient id="wave" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#fdf4e8" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#f0d3b0" stop-opacity="0.2" />
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="18" />
+    </filter>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#bg)" />
+  <rect width="1200" height="900" fill="url(#glow)" />
+
+  <g opacity="0.35">
+    <path d="M0,540 C160,480 320,560 480,520 C640,480 800,360 960,400 C1120,440 1200,360 1200,360 L1200,900 L0,900 Z" fill="url(#wave)" />
+    <path d="M0,630 C180,570 360,660 540,610 C720,560 900,430 1080,470 C1200,500 1200,900 1200,900 L0,900 Z" fill="url(#wave)" opacity="0.55" />
+  </g>
+
+  <g transform="translate(180 200)">
+    <path d="M80 0 C180 20 260 120 320 220 C400 350 540 450 680 430 C780 420 860 360 940 300" fill="none" stroke="url(#grain)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" opacity="0.3" />
+    <path d="M40 70 C160 110 260 220 340 320 C420 420 540 520 700 500 C800 490 900 420 980 360" fill="none" stroke="url(#grain)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" opacity="0.28" />
+    <path d="M0 150 C120 210 240 320 340 420 C420 500 520 580 700 570 C820 560 920 480 1020 410" fill="none" stroke="url(#grain)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" opacity="0.25" />
+  </g>
+
+  <g transform="translate(160 120)">
+    <path d="M190 180 C220 120 310 60 410 80 C510 100 550 180 610 230 C670 280 770 300 850 250 C930 200 990 90 1010 40" fill="none" stroke="#7b421b" stroke-width="14" stroke-linecap="round" opacity="0.28" />
+    <path d="M150 240 C200 170 280 120 360 130 C440 140 510 210 580 260 C650 310 760 340 840 300 C910 260 980 160 1030 90" fill="none" stroke="#b86a2a" stroke-width="12" stroke-linecap="round" opacity="0.24" />
+    <path d="M110 300 C180 220 260 190 330 200 C400 210 470 260 550 310 C630 360 740 390 830 360 C900 340 980 270 1040 210" fill="none" stroke="#d07d31" stroke-width="10" stroke-linecap="round" opacity="0.2" />
+  </g>
+
+  <g transform="translate(0 -40)">
+    <circle cx="260" cy="260" r="110" fill="#fce6c1" opacity="0.45" />
+    <circle cx="980" cy="420" r="140" fill="#f2caa3" opacity="0.35" />
+    <circle cx="850" cy="240" r="90" fill="#f8d9b0" opacity="0.6" />
+  </g>
+
+  <g transform="translate(240 260)">
+    <path d="M0 80 C40 0 140 -20 220 40 C300 100 360 220 450 220 C540 220 600 160 660 110 C720 60 800 20 880 80" fill="none" stroke="#8c4c1f" stroke-width="36" stroke-linecap="round" stroke-linejoin="round" opacity="0.12" />
+  </g>
+
+  <g transform="translate(940 540)" opacity="0.7">
+    <ellipse cx="0" cy="0" rx="180" ry="110" fill="#7c431d" filter="url(#soft)" opacity="0.32" />
+    <ellipse cx="-120" cy="-30" rx="120" ry="70" fill="#b37032" filter="url(#soft)" opacity="0.25" />
+  </g>
+
+  <g transform="translate(200 520)">
+    <path d="M0 0 C60 40 120 100 180 120 C260 150 340 120 420 160 C500 200 560 290 620 320 C700 360 820 340 900 300" fill="none" stroke="#bc7430" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" opacity="0.18" />
+  </g>
+</svg>
