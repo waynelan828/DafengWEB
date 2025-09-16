@@ -1,0 +1,17 @@
+swiper-container{display:block;position:relative;overflow:hidden;width:100%;height:100%;--swiper-pagination-bottom:1.5rem;--swiper-pagination-color:#007aff;--swiper-pagination-bullet-inactive-color:rgba(0,0,0,.3);--swiper-pagination-bullet-inactive-opacity:.5}
+swiper-slide{display:block}
+swiper-container.swiper-initialized swiper-slide{position:absolute;inset:0;width:100%;height:100%;opacity:0;pointer-events:none;transition:opacity var(--swiper-transition-duration,400ms) ease}
+swiper-container[data-effect="fade"].swiper-initialized swiper-slide{transition-property:opacity}
+swiper-container.swiper-initialized swiper-slide.swiper-slide-active{opacity:1;pointer-events:auto;z-index:2}
+swiper-container.swiper-initialized swiper-slide.swiper-slide-prev,swiper-container.swiper-initialized swiper-slide.swiper-slide-next{z-index:1}
+swiper-container:not(.swiper-initialized) swiper-slide:first-of-type{opacity:1;pointer-events:auto}
+swiper-container:not(.swiper-initialized) swiper-slide:not(:first-of-type){display:none}
+swiper-container .swiper-pagination{position:absolute;left:0;right:0;bottom:var(--swiper-pagination-bottom,1rem);display:flex;justify-content:center;align-items:center;gap:.75rem;padding:0;margin:0;pointer-events:none;z-index:10}
+swiper-container .swiper-pagination-bullet{width:.75rem;height:.75rem;border-radius:9999px;background:var(--swiper-pagination-bullet-inactive-color,rgba(0,0,0,.3));opacity:var(--swiper-pagination-bullet-inactive-opacity,.5);border:none;margin:0;padding:0;pointer-events:auto;cursor:pointer;transition:transform .3s ease,opacity .3s ease,background .3s ease}
+swiper-container .swiper-pagination-bullet:focus-visible{outline:2px solid currentColor;outline-offset:2px}
+swiper-container .swiper-pagination-bullet.swiper-pagination-bullet-active{background:var(--swiper-pagination-color,#007aff);opacity:1;transform:scale(1.1)}
+swiper-container .swiper-button-prev,swiper-container .swiper-button-next{position:absolute;top:0;bottom:0;display:flex;align-items:center;justify-content:center;z-index:20;color:inherit;cursor:pointer;pointer-events:auto;transition:background .2s ease}
+swiper-container .swiper-button-prev::after,swiper-container .swiper-button-next::after{content:"";display:block;width:1.25rem;height:1.25rem;border-top:2px solid currentColor;border-right:2px solid currentColor;margin-inline:auto}
+swiper-container .swiper-button-prev::after{transform:rotate(-135deg)}
+swiper-container .swiper-button-next::after{transform:rotate(45deg)}
+swiper-container .swiper-button-prev:hover,swiper-container .swiper-button-next:hover{background:rgba(0,0,0,.08)}
