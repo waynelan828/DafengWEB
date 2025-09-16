@@ -150,6 +150,11 @@ const normalizedSlides = slides
     pointer-events: auto;
   }
 
+  :global(swiper-container.hero-carousel .swiper-button-prev::after),
+  :global(swiper-container.hero-carousel .swiper-button-next::after) {
+    display: none;
+  }
+
   :global(swiper-container.hero-carousel::part(bullet)) {
     cursor: pointer;
     pointer-events: auto;
