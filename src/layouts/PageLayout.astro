@@ -19,7 +19,7 @@ const { metadata } = Astro.props;
   <slot name="announcement" />
   <slot name="header">
     <!-- Align header like the AstroWind template (logo + nav left, actions right) -->
-    <Header {...headerData} isSticky showToggleTheme position="right" />
+    <Header {...headerData} isSticky showToggleTheme={false} position="right" /> <!-- showToggleTheme：主題切換按鈕，如需再次顯示請將此屬性設為 true 並移除此註解 -->
   </slot>
   <main>
     <slot />
