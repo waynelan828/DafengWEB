@@ -1,0 +1,161 @@
+---
+import Image from '~/components/common/Image.astro';
+import type { ImageProps } from '~/utils/images-optimization';
+
+type SlideImage = ImageProps & {
+  src: string;
+  alt: string;
+};
+
+type Alignment = 'left' | 'center' | 'right';
+
+interface Slide {
+  image: SlideImage;
+  title?: string;
+  subtitle?: string;
+  description?: string;
+  tagline?: string;
+  overlayClass?: string;
+  align?: Alignment;
+}
+
+interface Props {
+  slides?: Slide[];
+  autoplayDelay?: number;
+  loop?: boolean;
+  pagination?: boolean;
+}
+
+const { slides = [], autoplayDelay = 6000, loop = true, pagination = true } = Astro.props as Props;
+
+const alignMap: Record<Alignment, string> = {
+  left: 'items-start text-left',
+  center: 'items-center text-center',
+  right: 'items-end text-right',
+};
+
+const normalizedSlides = slides
+  .filter((slide) => typeof slide?.image?.src === 'string' && typeof slide?.image?.alt === 'string')
+  .map((slide) => ({
+    ...slide,
+    align: slide.align ?? 'center',
+    overlayClass: slide.overlayClass ?? 'bg-black/50',
+    image: {
+      width: 1920,
+      height: 1080,
+      layout: 'fullWidth',
+      widths: [640, 960, 1280, 1536, 1920],
+      sizes: '100vw',
+      loading: 'eager',
+      ...slide.image,
+    },
+  }));
+---
+
+{
+  normalizedSlides.length ? (
+    <section class="relative not-prose md:-mt-[76px]">
+      <div class="relative w-full">
+        <div class="pt-0 md:pt-[76px] pointer-events-none" />
+        <swiper-container
+          class="hero-carousel block h-screen w-full"
+          effect="fade"
+          speed="800"
+          autoplay-delay={autoplayDelay}
+          autoplay-disable-on-interaction="false"
+          autoplay-pause-on-mouse-enter="true"
+          pagination-clickable="true"
+          {...(loop ? { loop: 'true' } : { loop: 'false' })}
+          {...(pagination ? { pagination: 'true' } : { pagination: 'false' })}
+        >
+          {normalizedSlides.map((slide) => {
+            const { src, alt, ...imageProps } = slide.image;
+
+            return (
+              <swiper-slide class="relative block h-screen w-full">
+                <div class="relative h-full w-full">
+                  <Image
+                    class="absolute inset-0 h-full w-full object-cover"
+                    src={src}
+                    alt={alt}
+                    {...(imageProps as ImageProps)}
+                  />
+                  <div class:list={['absolute inset-0 pointer-events-none', slide.overlayClass]} aria-hidden="true" />
+                  <div
+                    class:list={[
+                      'relative z-10 flex h-full w-full flex-col justify-center px-6 py-16 text-white sm:px-12 md:px-20 lg:px-28',
+                      alignMap[slide.align],
+                    ]}
+                  >
+                    <div class:list={['mx-auto flex w-full max-w-5xl flex-col gap-4', alignMap[slide.align]]}>
+                      {slide.tagline && (
+                        <p
+                          class="text-sm font-semibold uppercase tracking-[0.3em] text-white/70"
+                          set:html={slide.tagline}
+                        />
+                      )}
+                      {slide.title && (
+                        <h1
+                          class="text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl"
+                          set:html={slide.title}
+                        />
+                      )}
+                      {slide.subtitle && <p class="text-lg text-gray-100 sm:text-xl" set:html={slide.subtitle} />}
+                      {slide.description && (
+                        <p class="text-base text-gray-200 sm:text-lg" set:html={slide.description} />
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </swiper-slide>
+            );
+          })}
+        </swiper-container>
+      </div>
+    </section>
+  ) : (
+    <section class="relative not-prose">
+      <div class="aspect-video w-full bg-muted/20" />
+    </section>
+  )
+}
+
+<script is:inline>
+  if (typeof window !== 'undefined') {
+    const styleId = 'aw-swiper-style';
+    const scriptId = 'aw-swiper-script';
+
+    if (!document.getElementById(styleId)) {
+      const link = document.createElement('link');
+      link.id = styleId;
+      link.rel = 'stylesheet';
+      link.href = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css';
+      document.head.appendChild(link);
+    }
+
+    if (!customElements.get('swiper-container') && !document.getElementById(scriptId)) {
+      const script = document.createElement('script');
+      script.id = scriptId;
+      script.src = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    }
+  }
+</script>
+
+<style>
+  :global(swiper-container.hero-carousel) {
+    --swiper-pagination-bottom: 2.5rem;
+    --swiper-pagination-color: rgba(255, 255, 255, 1);
+    --swiper-pagination-bullet-inactive-color: rgba(255, 255, 255, 0.4);
+    --swiper-pagination-bullet-inactive-opacity: 1;
+  }
+
+  :global(swiper-container.hero-carousel swiper-slide) {
+    display: block;
+  }
+
+  :global(swiper-container.hero-carousel .swiper-pagination-bullet) {
+    cursor: pointer;
+  }
+</style>
