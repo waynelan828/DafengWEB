@@ -11,7 +11,7 @@ import icon from 'astro-icon';
 import compress from 'astro-compress';
 import type { AstroIntegration } from 'astro';
 
-import netlify from '@astrojs/netlify/functions';     // 🚀 Netlify adapter
+import netlify from '@astrojs/netlify';     // 🚀 Netlify adapter
 import decapCmsOauth from 'astro-decap-cms-oauth';    // 🚀 Decap CMS OAuth
 import astrowind from './vendor/integration';
 
@@ -88,6 +88,9 @@ export default defineConfig({
   site: 'https://nice8.works',
 
   image: {
+    service: {
+      entrypoint: '@astrojs/netlify/image-service',
+    },
     domains: ['cdn.pixabay.com'],
   },
 
