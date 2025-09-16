@@ -2,6 +2,7 @@ import { getPermalink, getBlogPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
+    { text: '首頁', href: getPermalink('/') },
     { text: '關於我們', href: getPermalink('/about') },
     { text: '服務項目', href: getPermalink('/services') },
     { text: '專案案例', href: getPermalink('/portfolio') },
@@ -16,6 +17,7 @@ export const footerData = {
     {
       title: '網站導覽',
       links: [
+        { text: '首頁', href: getPermalink('/') },
         { text: '關於我們', href: getPermalink('/about') },
         { text: '服務項目', href: getPermalink('/services') },
         { text: '專案案例', href: getPermalink('/portfolio') },
