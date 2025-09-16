@@ -26,9 +26,9 @@ const { metadata } = Astro.props;
             href: 'https://github.com/arthelokyo/astrowind',
           },
         ]}
-        showToggleTheme
+        showToggleTheme={false}
         position="right"
-      />
+      /> <!-- showToggleTheme：主題切換按鈕，如需再次顯示請將此屬性設為 true 並移除此註解 -->
     </slot>
   </Fragment>
   <slot />
