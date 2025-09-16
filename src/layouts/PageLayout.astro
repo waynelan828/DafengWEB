@@ -16,6 +16,10 @@ const { metadata } = Astro.props;
 ---
 
 <Layout metadata={metadata}>
+  <Fragment slot="head">
+    <link rel="stylesheet" href="/vendor/swiper/swiper-bundle.min.css" />
+    <script src="/vendor/swiper/swiper-element-bundle.min.js" defer></script>
+  </Fragment>
   <slot name="announcement" />
   <slot name="header">
     <!-- Align header like the AstroWind template (logo + nav left, actions right) -->

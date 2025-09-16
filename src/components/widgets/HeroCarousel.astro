@@ -58,7 +58,6 @@ const normalizedSlides = slides
       <div class="relative w-full">
         <div class="pt-0 md:pt-[76px] pointer-events-none" />
         <swiper-container
-          ref={el => (swiperRef = el)}
           class="hero-carousel relative block h-screen w-full"
           effect="fade"
           speed="800"
@@ -133,30 +132,6 @@ const normalizedSlides = slides
   )
 }
 
-<script is:inline>
-  let swiperRef: HTMLElement | null = null;
-
-  if (typeof window !== 'undefined') {
-    const styleId = 'aw-swiper-style';
-    const scriptId = 'aw-swiper-script';
-
-    if (!document.getElementById(styleId)) {
-      const link = document.createElement('link');
-      link.id = styleId;
-      link.rel = 'stylesheet';
-      link.href = '/vendor/swiper/swiper-bundle.min.css';
-      document.head.appendChild(link);
-    }
-
-    if (!customElements.get('swiper-container') && !document.getElementById(scriptId)) {
-      const script = document.createElement('script');
-      script.id = scriptId;
-      script.src = '/vendor/swiper/swiper-element-bundle.min.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    }
-  }
-</script>
 
 <style>
   :global(swiper-container.hero-carousel) {
