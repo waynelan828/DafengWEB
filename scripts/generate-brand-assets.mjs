@@ -36,7 +36,11 @@ async function findFirstExisting(baseName) {
     try {
       await fs.access(p);
       return p;
-    } catch {}
+    } catch (error) {
+      if (error && typeof error === 'object' && 'code' in error && error.code !== 'ENOENT') {
+        throw error;
+      }
+    }
   }
   return null;
 }
@@ -65,7 +69,9 @@ async function generate() {
   const sourceMark = (await findFirstExisting('mark')) || sourceLogo;
 
   if (!sourceLogo && !sourceMark) {
-    console.error('No source images found. Please add `public/brand/mark.png` (square) and/or `public/brand/logo.png`.');
+    console.error(
+      'No source images found. Please add `public/brand/mark.png` (square) and/or `public/brand/logo.png`.'
+    );
     process.exit(1);
   }
 
@@ -74,8 +80,18 @@ async function generate() {
     const logoBuffer = await fs.readFile(sourceLogo);
     const base = sharp(logoBuffer, { limitInputPixels: false });
     // Keep good resolution; UI constrains display height. Transparent background preserved.
-    const logoLight = enhanceForGeneral(base).resize({ width: 1024, withoutEnlargement: true, fit: 'inside', background: { r: 0, g: 0, b: 0, alpha: 0 } });
-    const logoDark = enhanceForDarkBg(base).resize({ width: 1024, withoutEnlargement: true, fit: 'inside', background: { r: 0, g: 0, b: 0, alpha: 0 } });
+    const logoLight = enhanceForGeneral(base).resize({
+      width: 1024,
+      withoutEnlargement: true,
+      fit: 'inside',
+      background: { r: 0, g: 0, b: 0, alpha: 0 },
+    });
+    const logoDark = enhanceForDarkBg(base).resize({
+      width: 1024,
+      withoutEnlargement: true,
+      fit: 'inside',
+      background: { r: 0, g: 0, b: 0, alpha: 0 },
+    });
 
     await writePng(logoLight, path.join(brandDir, 'logo.png'));
     await writePng(logoDark, path.join(brandDir, 'logo-dark.png'));
