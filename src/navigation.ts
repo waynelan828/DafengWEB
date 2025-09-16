@@ -50,18 +50,7 @@ export const footerData = {
     { text: '條款', href: getPermalink('/terms') },
     { text: '隱私權政策', href: getPermalink('/privacy') },
   ],
-  socialLinks: [
-    {
-      ariaLabel: 'Facebook',
-      icon: 'tabler:brand-facebook',
-      href: 'https://facebook.com/nice8works',
-    },
-    {
-      ariaLabel: 'Instagram',
-      icon: 'tabler:brand-instagram',
-      href: 'https://instagram.com/nice8works',
-    },
-  ],
+  
   footNote: `
     © 大鋒室內裝修工程有限公司 · All rights reserved.
   `,
