@@ -1,8 +1,5 @@
 ---
-import Features2 from '~/components/widgets/Features2.astro';
-import Features3 from '~/components/widgets/Features3.astro';
 import Hero from '~/components/widgets/Hero.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
@@ -12,28 +9,36 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-
   <Hero
-    tagline="About Us"
+    tagline="關於大鋒"
     image={{
       src: 'https://images.unsplash.com/photo-1591453253329-30b8d3590b7b?q=80&w=1600&auto=format&fit=crop',
-      alt: '木作工藝特寫',
+      alt: '木作工匠專注於打造細緻的細節',
     }}
   >
     <Fragment slot="title">匠心獨具，築夢踏實</Fragment>
     <Fragment slot="subtitle">
-      我們不僅是工班，更是您值得信賴的專業夥伴。以精湛木作工藝與嚴謹施工管理，將設計藍圖精準轉化為真實空間。
+      大鋒工程有限公司秉持「匠心獨具，築夢踏實」的理念，將設計藍圖中的每一個細節，以專業與熱情實現為可觸摸的空間。
     </Fragment>
   </Hero>
 
   <section class="relative w-full py-16 md:py-24 lg:py-28">
     <div class="container grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
       <div class="mx-auto w-full max-w-2xl">
-        <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">匠心獨具，築夢踏實</h2>
+        <p class="text-sm font-semibold uppercase tracking-widest text-amber-600">2.2.1 公司理念與願景</p>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
+          匠心獨具，築夢踏實
+        </h2>
         <div class="mt-6 space-y-5 text-lg leading-relaxed text-muted sm:text-xl">
-          <p>匠心獨具，築夢踏實。專為設計師提供專業、效率、安心的木作工程服務。</p>
-          <p>我們不僅是工班，更是您值得信賴的專業夥伴。以精湛木作工藝與嚴謹施工管理，將設計藍圖精準轉化為真實空間。</p>
+          <p>
+            大鋒工程有限公司秉持「匠心獨具，築夢踏實」的經營理念，深信每個空間都承載著獨特的故事與期待。我們不僅專注於精湛的木作工藝，更致力於成為設計師最堅實的後盾。
+          </p>
+          <p>
+            透過專業與熱情，我們精準轉化設計藍圖中的每一個細節，確保作品在質感、功能與安全上都臻於完美。我們相信，只要與設計師並肩前行，就能創造超越想像的空間價值。
+          </p>
+          <p>
+            我們的願景，是以卓越的裝修木作工程服務，成就每一位設計師的創意，同時為使用者打造安心、舒適且充滿美學的生活與工作環境。
+          </p>
         </div>
       </div>
 
@@ -42,8 +47,8 @@ const metadata = {
           class="relative w-full overflow-hidden rounded-3xl border border-slate-200/80 bg-white/80 shadow-2xl shadow-[0_36px_90px_-30px_rgba(120,53,15,0.35)] backdrop-blur-md dark:border-slate-700/60 dark:bg-slate-900/60"
         >
           <img
-            src="/about/vision.svg"
-            alt="抽象表現工匠精神與木作層次的視覺"
+            src="https://images.unsplash.com/photo-1523419409543-0c1df022bdd1?auto=format&fit=crop&w=1600&q=80"
+            alt="木工匠人專注打磨木材的手部特寫"
             loading="lazy"
             class="h-full w-full object-cover"
           />
@@ -58,185 +63,135 @@ const metadata = {
     </div>
   </section>
 
-  <!-- Stats Widget ****************** -->
+  <section class="relative w-full bg-slate-50 py-16 dark:bg-slate-950/60 md:py-24 lg:py-28">
+    <div class="container grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr]">
+      <div class="relative order-last flex w-full items-center justify-center lg:order-first">
+        <div
+          class="relative w-full overflow-hidden rounded-3xl border border-slate-200/80 bg-white shadow-xl dark:border-slate-700/60 dark:bg-slate-900/60"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1521737604893-ff327cd977e8?auto=format&fit=crop&w=1600&q=80"
+            alt="專業木作團隊在工地討論細節的情境照"
+            loading="lazy"
+            class="h-full w-full object-cover"
+          />
+        </div>
+      </div>
+      <div class="mx-auto w-full max-w-2xl">
+        <p class="text-sm font-semibold uppercase tracking-widest text-amber-600">2.2.2 專業團隊介紹</p>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
+          專業為本，經驗為證
+        </h2>
+        <div class="mt-6 space-y-5 text-lg leading-relaxed text-muted sm:text-xl">
+          <p>
+            大鋒工程的核心競爭力，來自於一支經驗豐富、技術精湛的專業工班團隊。木作師傅平均擁有超過15年的實務經驗，不僅精通各式木作工法，更具備深厚的圖面判讀能力與現場應變智慧。
+          </p>
+          <p>
+            我們深知與設計師合作的重要性，因此團隊成員皆具備良好的溝通協作能力，確保從設計到施工的每一個環節都能無縫接軌，為設計師提供最專業、最有效率的服務。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- 可於未來加入真實數據（里程碑、完工案量等） -->
+  <section class="relative w-full py-16 md:py-24 lg:py-28">
+    <div class="container grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+      <div class="mx-auto w-full max-w-2xl">
+        <p class="text-sm font-semibold uppercase tracking-widest text-amber-600">2.2.3 公司沿革與里程碑</p>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
+          穩健前行，精益求精
+        </h2>
+        <div class="mt-6 space-y-5 text-lg leading-relaxed text-muted sm:text-xl">
+          <p>
+            大鋒工程有限公司自成立以來，始終秉持對品質的堅持與對專業的追求。從最初的木作工作室，逐步發展成為今日能承接大型室內裝修專案的專業工程公司。
+          </p>
+          <p>
+            每一個成功案例，都是我們成長的足跡；每一次技術的突破，都是我們精益求精的證明。未來，我們將持續引進新技術、新材料，不斷提升服務品質，與設計師夥伴共同創造更多空間美學的可能。
+          </p>
+        </div>
+        <div class="mt-10 space-y-8 border-l-2 border-amber-500/60 pl-6 dark:border-amber-400/60">
+          <div>
+            <span class="text-sm font-semibold uppercase tracking-wide text-amber-600">起點</span>
+            <h3 class="mt-2 text-xl font-semibold text-slate-900 dark:text-white">創立專業木作工作室</h3>
+            <p class="mt-2 text-base leading-relaxed text-muted">
+              以小型工作室起家，累積扎實的木作工法與現場經驗，奠定精緻工藝的堅實根基。
+            </p>
+          </div>
+          <div>
+            <span class="text-sm font-semibold uppercase tracking-wide text-amber-600">成長</span>
+            <h3 class="mt-2 text-xl font-semibold text-slate-900 dark:text-white">擴編團隊與服務規模</h3>
+            <p class="mt-2 text-base leading-relaxed text-muted">
+              招募多位資深木作師傅與專案管理人才，建立完整施工流程，逐步承接複雜度更高的專案。
+            </p>
+          </div>
+          <div>
+            <span class="text-sm font-semibold uppercase tracking-wide text-amber-600">突破</span>
+            <h3 class="mt-2 text-xl font-semibold text-slate-900 dark:text-white">完成指標型裝修專案</h3>
+            <p class="mt-2 text-base leading-relaxed text-muted">
+              與多家知名設計公司合作，成功交付多個大型商辦與住宅空間，累積亮眼口碑。
+            </p>
+          </div>
+          <div>
+            <span class="text-sm font-semibold uppercase tracking-wide text-amber-600">前瞻</span>
+            <h3 class="mt-2 text-xl font-semibold text-slate-900 dark:text-white">引進新技術與材料</h3>
+            <p class="mt-2 text-base leading-relaxed text-muted">
+              持續更新設備與工法，導入永續材料與智慧工序，確保服務品質與環境責任並行。
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="relative flex w-full items-center justify-center">
+        <div
+          class="relative w-full overflow-hidden rounded-3xl border border-slate-200/80 bg-white shadow-xl dark:border-slate-700/60 dark:bg-slate-900/60"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80"
+            alt="充滿木作材料與工具的專業工作環境"
+            loading="lazy"
+            class="h-full w-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Features3 Widget ************** -->
-
-  <Features3
-    title="公司理念與願景"
-    subtitle="誠信、品質、創新、共好——四大核心價值，貫穿每個專案。"
-    columns={3}
-    isBeforeContent={true}
-    items={[
-      {
-        title: '專業為本',
-        description: '深厚的圖面判讀與現場應變能力，讓施工與設計無縫接軌。',
-        icon: 'tabler:certificate',
-      },
-      {
-        title: '品質至上',
-        description: '選材嚴謹、收邊細膩，確保工程品質與使用安全。',
-        icon: 'tabler:shield-check',
-      },
-      {
-        title: '高效協作',
-        description: '與設計師密切溝通、回報透明，讓進度掌握更安心。',
-        icon: 'tabler:messages',
-      },
-    ]}
-  />
-
-  <!-- Features3 Widget ************** -->
-
-  <Features3
-    columns={3}
-    isAfterContent={true}
-    items={[
-      {
-        title: 'E-commerce',
-        description:
-          'Rutrum non odio at vehicula. Proin ipsum justo, dignissim in vehicula sit amet, dignissim id quam. Sed ac tincidunt sapien.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Blog',
-        description:
-          'Nullam efficitur volutpat sem sed fringilla. Suspendisse et enim eu orci volutpat laoreet ac vitae libero.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Business',
-        description:
-          'Morbi et elit finibus, facilisis justo ut, pharetra ipsum. Donec efficitur, ipsum quis congue luctus, mauris magna.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Branding',
-        description:
-          'Suspendisse vitae nisi eget tortor luctus maximus sed non lectus. Cras malesuada pretium placerat. Nullam venenatis dolor a ante rhoncus.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Medical',
-        description:
-          'Vestibulum malesuada lacus id nibh posuere feugiat. Nam volutpat nulla a felis ultrices, id suscipit mauris congue. In hac habitasse platea dictumst.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Fashion Design',
-        description:
-          'Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus.',
-        icon: 'tabler:template',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Colorful Image',
-    }}
-  />
-
-  <!-- Steps2 Widget ****************** -->
-
-  <Steps2
-    title="Our values"
-    subtitle="Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus. Nulla facilisi. Vestibulum malesuada lacus."
-    items={[
-      {
-        title: 'Customer-centric approach',
-        description:
-          'Donec id nibh neque. Quisque et fermentum tortor. Fusce vitae dolor a mauris dignissim commodo. Ut eleifend luctus condimentum.',
-      },
-      {
-        title: 'Constant Improvement',
-        description:
-          'Phasellus laoreet fermentum venenatis. Vivamus dapibus pulvinar arcu eget mattis. Fusce eget mauris leo.',
-      },
-      {
-        title: 'Ethical Practices',
-        description:
-          'Vestibulum imperdiet libero et lectus molestie, et maximus augue porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
-      },
-    ]}
-  />
-
-  <!-- Steps2 Widget ****************** -->
-
-  <Steps2
-    title="Achievements"
-    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla, sed porttitor est nibh at nulla."
-    isReversed={true}
-    callToAction={{
-      text: 'See more',
-      href: '/',
-    }}
-    items={[
-      {
-        title: 'Global reach',
-        description: 'Nam malesuada urna in enim imperdiet tincidunt. Phasellus non tincidunt nisi, at elementum mi.',
-        icon: 'tabler:globe',
-      },
-      {
-        title: 'Positive customer feedback and reviews',
-        description:
-          'Cras semper nulla leo, eget laoreet erat cursus sed. Praesent faucibus massa in purus iaculis dictum.',
-        icon: 'tabler:message-star',
-      },
-      {
-        title: 'Awards and recognition as industry experts',
-        description:
-          'Phasellus lacinia cursus velit, eu malesuada magna pretium eu. Etiam aliquet tellus purus, blandit lobortis ex rhoncus vitae.',
-        icon: 'tabler:award',
-      },
-    ]}
-  />
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Our locations"
-    tagline="Find us"
-    columns={4}
-    items={[
-      {
-        title: 'EE.UU',
-        description: '1234 Lorem Ipsum St, 12345, Miami',
-      },
-      {
-        title: 'Spain',
-        description: '5678 Lorem Ipsum St, 56789, Madrid',
-      },
-      {
-        title: 'Australia',
-        description: '9012 Lorem Ipsum St, 90123, Sydney',
-      },
-      {
-        title: 'Brazil',
-        description: '3456 Lorem Ipsum St, 34567, São Paulo',
-      },
-    ]}
-  />
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Technical Support"
-    tagline="Contact us"
-    columns={2}
-    items={[
-      {
-        title: 'Chat with us',
-        description:
-          'Integer luctus laoreet libero, auctor varius purus rutrum sit amet. Ut nec molestie nisi, quis eleifend mi.',
-        icon: 'tabler:messages',
-      },
-      {
-        title: 'Call us',
-        description:
-          'Mauris faucibus finibus orci, in posuere elit viverra non. In hac habitasse platea dictumst. Cras lobortis metus a hendrerit congue.',
-        icon: 'tabler:headset',
-      },
-    ]}
-  />
+  <section class="relative w-full bg-slate-900 py-16 text-white md:py-24 lg:py-28">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(251,191,36,0.12),_transparent_60%)]"></div>
+    <div class="container relative">
+      <p class="text-sm font-semibold uppercase tracking-widest text-amber-300">2.2.4 企業文化</p>
+      <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">誠信、品質、創新、共好</h2>
+      <div class="mt-6 max-w-3xl text-lg leading-relaxed text-slate-200 sm:text-xl">
+        <p>
+          大鋒工程的企業文化根植於「誠信、品質、創新、共好」四大核心價值。誠信是合作的基石，品質是生存的命脈，創新是發展的動力，而共好則是我們與設計師、客戶共同成長的目標。
+        </p>
+        <p class="mt-4">我們鼓勵團隊成員不斷學習、精進技藝，並在工作中保持開放、積極的態度，攜手打造卓越的空間作品。</p>
+      </div>
+      <div class="mt-10 grid gap-6 md:grid-cols-2">
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
+          <h3 class="text-2xl font-semibold">誠信</h3>
+          <p class="mt-3 text-base leading-relaxed text-slate-200/90">
+            以誠懇透明的態度面對每一位設計師與客戶，建立長期信任關係，確保專案資訊與進度公開透明。
+          </p>
+        </div>
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
+          <h3 class="text-2xl font-semibold">品質</h3>
+          <p class="mt-3 text-base leading-relaxed text-slate-200/90">
+            從選材到完工皆層層把關，堅持細膩的工法與嚴謹的驗收流程，確保作品兼具安全與美感。
+          </p>
+        </div>
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
+          <h3 class="text-2xl font-semibold">創新</h3>
+          <p class="mt-3 text-base leading-relaxed text-slate-200/90">
+            鼓勵團隊擁抱新技術與多元材料，不斷優化施工流程，創造更多元、具前瞻性的空間樣貌。
+          </p>
+        </div>
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
+          <h3 class="text-2xl font-semibold">共好</h3>
+          <p class="mt-3 text-base leading-relaxed text-slate-200/90">
+            與設計師、供應商及客戶保持緊密合作，分享專業知識與經驗，共同成就值得驕傲的空間作品。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
