@@ -4,8 +4,8 @@ export const headerData = {
   links: [
     { text: '關於我們', href: getPermalink('/about') },
     { text: '服務項目', href: getPermalink('/services') },
-    { text: '作品集', href: getPermalink('/portfolio') },
-    { text: '部落格', href: getBlogPermalink() },
+    { text: '專案案例', href: getPermalink('/portfolio') },
+    { text: 'BLOG/木工新知', href: getBlogPermalink() },
     { text: '聯絡我們', href: getPermalink('/contact') },
   ],
   actions: [],
@@ -18,8 +18,8 @@ export const footerData = {
       links: [
         { text: '關於我們', href: getPermalink('/about') },
         { text: '服務項目', href: getPermalink('/services') },
-        { text: '作品集', href: getPermalink('/portfolio') },
-        { text: '部落格', href: getBlogPermalink() },
+        { text: '專案案例', href: getPermalink('/portfolio') },
+        { text: 'BLOG/木工新知', href: getBlogPermalink() },
         { text: '聯絡我們', href: getPermalink('/contact') },
       ],
     },
@@ -27,7 +27,7 @@ export const footerData = {
       title: '聯絡資訊',
       links: [
         { text: 'Email: info@nice8.works', href: 'mailto:info@nice8.works' },
-        { text: '地址: 台北市中山區某某路20號', href: '#' },
+        { text: '地址: 235新北市中和區板南路520巷5號', href: '#' },
         { text: '營業時間: 週一至週五 08:00-17:00', href: '#' },
       ],
     },
@@ -49,7 +49,7 @@ export const footerData = {
     },
   ],
   footNote: `
-    © 大鋒工程 Da Feng Interior · All rights reserved.
+    © 大鋒室內裝修工程有限公司 · All rights reserved.
   `,
 };
 
