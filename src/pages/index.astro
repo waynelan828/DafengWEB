@@ -5,10 +5,8 @@ import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
-import Content from '~/components/widgets/Content.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
 import ItemGrid from '~/components/ui/ItemGrid.astro';
 
 const metadata = {
@@ -22,10 +20,6 @@ const metadata = {
   <!-- Hero：首頁主視覺 -->
 
   <Hero
-    actions={[
-      { variant: 'primary', text: '預約現勘/估價', href: '/contact', icon: 'tabler:calendar-check' },
-      { text: '看作品集', href: '/portfolio' },
-    ]}
     image={{ src: '~/assets/images/hero-image.png', alt: '大鋒工程 室內裝修與木作' }}
   >
     <Fragment slot="title">
@@ -222,12 +216,5 @@ const metadata = {
     ]}
   />
 
-  <!-- 行動呼籲 -->
-  <CallToAction
-    actions={[{ variant: 'primary', text: '免費諮詢與現勘', href: '/contact' }]}
-  >
-    <Fragment slot="title">把想要的家，交給專業團隊</Fragment>
-    <Fragment slot="subtitle">留下您的需求與聯絡方式，我們 1–2 個工作日回覆。</Fragment>
-  </CallToAction>
 </Layout>
 

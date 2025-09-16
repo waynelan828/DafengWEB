@@ -1,0 +1,23 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<div class="fixed-cta">
+  <a href="#" class="btn-primary shadow-lg gap-2" aria-label="預約估價">
+    <Icon name="simple-icons:line" class="w-5 h-5" aria-hidden="true" />
+    <span>預約估價</span>
+  </a>
+</div>
+
+<style>
+  .fixed-cta {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 50;
+  }
+
+  .fixed-cta a {
+    gap: 0.5rem;
+  }
+</style>
