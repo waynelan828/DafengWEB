@@ -65,7 +65,11 @@ const normalizedSlides = slides
           autoplay-disable-on-interaction="false"
           autoplay-pause-on-mouse-enter="true"
           {...(loop ? { loop: 'true' } : { loop: 'false' })}
-          {...(pagination ? { pagination: 'true' } : { pagination: 'false' })}
+          {...
+            pagination
+              ? { pagination: 'true', 'pagination-clickable': 'true' }
+              : { pagination: 'false', 'pagination-clickable': 'false' }
+          }
         >
           {normalizedSlides.map((slide) => {
             const { src, alt, ...imageProps } = slide.image;
@@ -152,5 +156,15 @@ const normalizedSlides = slides
 
   :global(swiper-container.hero-carousel swiper-slide) {
     display: block;
+  }
+
+  :global(swiper-container.hero-carousel .swiper-pagination-bullet) {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+
+  :global(swiper-container.hero-carousel::part(bullet)) {
+    cursor: pointer;
+    pointer-events: auto;
   }
 </style>
