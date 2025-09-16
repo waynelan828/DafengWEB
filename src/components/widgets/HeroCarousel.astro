@@ -62,6 +62,7 @@ const normalizedSlides = slides
           class="hero-carousel relative block h-screen w-full"
           effect="fade"
           speed="800"
+          navigation="true"
           autoplay-delay={autoplayDelay}
           autoplay-disable-on-interaction="false"
           autoplay-pause-on-mouse-enter="true"
@@ -72,16 +73,6 @@ const normalizedSlides = slides
               : { pagination: 'false', 'pagination-clickable': 'false' }
           }
         >
-          <div class="absolute inset-0 z-20 flex" aria-hidden="true">
-            <div
-              class="z-20 h-full w-1/2 cursor-pointer bg-transparent"
-              on:click={() => swiperRef?.swiper.slidePrev()}
-            />
-            <div
-              class="z-20 h-full w-1/2 cursor-pointer bg-transparent"
-              on:click={() => swiperRef?.swiper.slideNext()}
-            />
-          </div>
           {normalizedSlides.map((slide) => {
             const { src, alt, ...imageProps } = slide.image;
 
@@ -124,6 +115,14 @@ const normalizedSlides = slides
               </swiper-slide>
             );
           })}
+          <div
+            slot="container-end"
+            class="swiper-button-prev absolute left-0 z-20 h-full w-1/2 cursor-pointer bg-transparent"
+          />
+          <div
+            slot="container-end"
+            class="swiper-button-next absolute right-0 z-20 h-full w-1/2 cursor-pointer bg-transparent"
+          />
         </swiper-container>
       </div>
     </section>
