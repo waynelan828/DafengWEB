@@ -4,17 +4,9 @@ import { SITE } from 'astrowind:config';
 
 <a href="/" class="flex items-center">
   <!-- Dark theme logo (if available) -->
-  <img
-    src="/brand/logo-dark.png"
-    alt={SITE?.name || 'Logo'}
-    class="h-8 w-auto hidden dark:inline-block"
-  />
+  <img src="/brand/logo-dark.png" alt={SITE?.name || 'Logo'} class="h-8 w-auto hidden dark:inline-block" />
   <!-- Light theme logo -->
-  <img
-    src="/brand/logo.png"
-    alt={SITE?.name || 'Logo'}
-    class="h-8 w-auto inline-block dark:hidden"
-  />
+  <img src="/brand/logo.png" alt={SITE?.name || 'Logo'} class="h-8 w-auto inline-block dark:hidden" />
   <span
     class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
     >{SITE?.name}</span

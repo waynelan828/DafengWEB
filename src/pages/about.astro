@@ -1,11 +1,84 @@
 ---
 import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import ItemGrid from '~/components/ui/ItemGrid.astro';
+import Timeline from '~/components/ui/Timeline.astro';
 import Layout from '~/layouts/PageLayout.astro';
+import type { Item } from '~/types';
 
 const metadata = {
   title: '關於我們｜大鋒室內裝修工程有限公司',
   description: '匠心獨具，築夢踏實。專為設計師提供專業、效率、安心的木作工程服務。',
 };
+
+const teamHighlights: Array<Item> = [
+  {
+    title: '平均 15 年實務經驗',
+    description: '木作師傅平均擁有超過 15 年的現場與工法歷練，熟悉各式木作結構與細緻收邊技術。',
+    icon: 'tabler:medal',
+  },
+  {
+    title: '深厚圖面判讀能力',
+    description: '精通施工圖與材質規劃，能精準轉譯設計藍圖並規畫可行的施工工法。',
+    icon: 'tabler:blueprint',
+  },
+  {
+    title: '跨團隊協作專長',
+    description: '與設計師、監工及各工種保持順暢溝通協作，確保每個環節無縫銜接。',
+    icon: 'tabler:users',
+  },
+  {
+    title: '現場應變與控場',
+    description: '面對突發狀況即時調度人力與資源，守護工地安全與里程碑進度。',
+    icon: 'tabler:alert-triangle',
+  },
+];
+
+const timelineItems: Array<Item> = [
+  {
+    title: '創立專業木作工作室',
+    description: '以小型工作室起家，累積扎實的木作工法與現場經驗，奠定精緻工藝的根基。',
+    icon: 'tabler:sparkles',
+  },
+  {
+    title: '擴編團隊與服務規模',
+    description: '招募資深木作師傅與專案管理人才，建立完整施工流程，承接更高複雜度的專案。',
+    icon: 'tabler:users-group',
+  },
+  {
+    title: '完成指標型裝修專案',
+    description: '與多家知名設計公司合作，成功交付大型商辦與住宅空間，累積亮眼口碑。',
+    icon: 'tabler:building-skyscraper',
+  },
+  {
+    title: '引進新技術與材料',
+    description: '持續更新設備與工法，導入永續材料與智慧工序，讓品質與環境責任並行。',
+    icon: 'tabler:leaf',
+  },
+];
+
+const cultureItems: Array<Item> = [
+  {
+    title: '誠信',
+    description: '以誠懇透明的態度面對每位設計師與客戶，建立長期信任關係並確保進度公開。',
+    icon: 'tabler:handshake',
+  },
+  {
+    title: '品質',
+    description: '從選材到完工層層把關，堅持細膩工法與嚴謹驗收流程，作品兼具安全與美感。',
+    icon: 'tabler:shield-check',
+  },
+  {
+    title: '創新',
+    description: '鼓勵團隊擁抱新技術與多元材料，不斷優化施工流程，創造前瞻性的空間樣貌。',
+    icon: 'tabler:sparkles',
+  },
+  {
+    title: '共好',
+    description: '與設計師、供應商及客戶緊密合作，分享專業與經驗，共同成就值得驕傲的作品。',
+    icon: 'tabler:users-plus',
+  },
+];
 ---
 
 <Layout metadata={metadata}>
@@ -25,7 +98,7 @@ const metadata = {
   <section class="relative w-full py-16 md:py-24 lg:py-28">
     <div class="container grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
       <div class="mx-auto w-full max-w-2xl">
-        <p class="text-sm font-semibold uppercase tracking-widest text-amber-600">2.2.1 公司理念與願景</p>
+        <p class="text-sm font-semibold uppercase tracking-widest text-amber-600">公司理念與願景</p>
         <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
           匠心獨具，築夢踏實
         </h2>
@@ -78,66 +151,61 @@ const metadata = {
         </div>
       </div>
       <div class="mx-auto w-full max-w-2xl">
-        <p class="text-sm font-semibold uppercase tracking-widest text-amber-600">2.2.2 專業團隊介紹</p>
+        <p class="text-sm font-semibold uppercase tracking-widest text-amber-600">專業團隊</p>
         <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
           專業為本，經驗為證
         </h2>
         <div class="mt-6 space-y-5 text-lg leading-relaxed text-muted sm:text-xl">
           <p>
-            大鋒工程的核心競爭力，來自於一支經驗豐富、技術精湛的專業工班團隊。木作師傅平均擁有超過15年的實務經驗，不僅精通各式木作工法，更具備深厚的圖面判讀能力與現場應變智慧。
+            大鋒工程的核心競爭力來自於一支經驗豐富、技術精湛的專業工班團隊。木作師傅平均擁有超過 15
+            年的實務經驗，不僅精通各式木作工法，更具備深厚的圖面判讀能力與現場應變智慧。
           </p>
           <p>
             我們深知與設計師合作的重要性，因此團隊成員皆具備良好的溝通協作能力，確保從設計到施工的每一個環節都能無縫接軌，為設計師提供最專業、最有效率的服務。
           </p>
         </div>
+        <ItemGrid
+          columns={2}
+          defaultIcon="tabler:circle-check"
+          items={teamHighlights}
+          classes={{
+            container: 'mt-10',
+            panel:
+              'items-start gap-4 rounded-2xl border border-slate-200/70 bg-white/90 p-6 shadow-sm backdrop-blur dark:border-slate-700/60 dark:bg-slate-900/60',
+            icon: 'mr-4 h-10 w-10 rounded-full bg-amber-100 p-2 text-amber-600 dark:bg-amber-500/10 dark:text-amber-300 rtl:ml-4 rtl:mr-0',
+            title: 'text-lg font-semibold text-slate-900 dark:text-white',
+            description: 'mt-2 text-sm leading-relaxed text-muted dark:text-slate-300 sm:text-base',
+          }}
+        />
       </div>
     </div>
   </section>
 
   <section class="relative w-full py-16 md:py-24 lg:py-28">
-    <div class="container grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-      <div class="mx-auto w-full max-w-2xl">
-        <p class="text-sm font-semibold uppercase tracking-widest text-amber-600">2.2.3 公司沿革與里程碑</p>
+    <div class="container grid items-start gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+      <div class="mx-auto w-full max-w-3xl">
+        <p class="text-sm font-semibold uppercase tracking-widest text-amber-600">公司沿革與里程碑</p>
         <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
           穩健前行，精益求精
         </h2>
-        <div class="mt-6 space-y-5 text-lg leading-relaxed text-muted sm:text-xl">
-          <p>
-            大鋒工程有限公司自成立以來，始終秉持對品質的堅持與對專業的追求。從最初的木作工作室，逐步發展成為今日能承接大型室內裝修專案的專業工程公司。
-          </p>
-          <p>
-            每一個成功案例，都是我們成長的足跡；每一次技術的突破，都是我們精益求精的證明。未來，我們將持續引進新技術、新材料，不斷提升服務品質，與設計師夥伴共同創造更多空間美學的可能。
-          </p>
-        </div>
-        <div class="mt-10 space-y-8 border-l-2 border-amber-500/60 pl-6 dark:border-amber-400/60">
-          <div>
-            <span class="text-sm font-semibold uppercase tracking-wide text-amber-600">起點</span>
-            <h3 class="mt-2 text-xl font-semibold text-slate-900 dark:text-white">創立專業木作工作室</h3>
-            <p class="mt-2 text-base leading-relaxed text-muted">
-              以小型工作室起家，累積扎實的木作工法與現場經驗，奠定精緻工藝的堅實根基。
-            </p>
-          </div>
-          <div>
-            <span class="text-sm font-semibold uppercase tracking-wide text-amber-600">成長</span>
-            <h3 class="mt-2 text-xl font-semibold text-slate-900 dark:text-white">擴編團隊與服務規模</h3>
-            <p class="mt-2 text-base leading-relaxed text-muted">
-              招募多位資深木作師傅與專案管理人才，建立完整施工流程，逐步承接複雜度更高的專案。
-            </p>
-          </div>
-          <div>
-            <span class="text-sm font-semibold uppercase tracking-wide text-amber-600">突破</span>
-            <h3 class="mt-2 text-xl font-semibold text-slate-900 dark:text-white">完成指標型裝修專案</h3>
-            <p class="mt-2 text-base leading-relaxed text-muted">
-              與多家知名設計公司合作，成功交付多個大型商辦與住宅空間，累積亮眼口碑。
-            </p>
-          </div>
-          <div>
-            <span class="text-sm font-semibold uppercase tracking-wide text-amber-600">前瞻</span>
-            <h3 class="mt-2 text-xl font-semibold text-slate-900 dark:text-white">引進新技術與材料</h3>
-            <p class="mt-2 text-base leading-relaxed text-muted">
-              持續更新設備與工法，導入永續材料與智慧工序，確保服務品質與環境責任並行。
-            </p>
-          </div>
+        <p class="mt-6 text-lg leading-relaxed text-muted sm:text-xl">
+          大鋒工程有限公司自成立以來，始終秉持對品質的堅持與對專業的追求。從最初的木作工作室，逐步發展成為今日能承接大型室內裝修專案的專業工程公司。
+        </p>
+        <p class="mt-4 text-lg leading-relaxed text-muted sm:text-xl">
+          每一個成功案例，都是我們成長的足跡；每一次技術的突破，都是我們精益求精的證明。未來，我們將持續引進新技術、新材料，不斷提升服務品質，與設計師夥伴共同創造更多空間美學的可能。
+        </p>
+        <div class="mt-10">
+          <Timeline
+            items={timelineItems}
+            defaultIcon="tabler:timeline"
+            classes={{
+              container: 'flex flex-col gap-10',
+              panel: 'items-start',
+              title: 'text-xl font-semibold text-slate-900 dark:text-white',
+              description: 'text-base leading-relaxed text-muted sm:text-lg',
+              icon: 'text-amber-600 border-amber-500/60 bg-amber-100 dark:border-amber-400/60 dark:bg-amber-500/10 dark:text-amber-300',
+            }}
+          />
         </div>
       </div>
       <div class="relative flex w-full items-center justify-center">
@@ -155,43 +223,30 @@ const metadata = {
     </div>
   </section>
 
-  <section class="relative w-full bg-slate-900 py-16 text-white md:py-24 lg:py-28">
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(251,191,36,0.12),_transparent_60%)]"></div>
-    <div class="container relative">
-      <p class="text-sm font-semibold uppercase tracking-widest text-amber-300">2.2.4 企業文化</p>
-      <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">誠信、品質、創新、共好</h2>
-      <div class="mt-6 max-w-3xl text-lg leading-relaxed text-slate-200 sm:text-xl">
-        <p>
-          大鋒工程的企業文化根植於「誠信、品質、創新、共好」四大核心價值。誠信是合作的基石，品質是生存的命脈，創新是發展的動力，而共好則是我們與設計師、客戶共同成長的目標。
-        </p>
-        <p class="mt-4">我們鼓勵團隊成員不斷學習、精進技藝，並在工作中保持開放、積極的態度，攜手打造卓越的空間作品。</p>
-      </div>
-      <div class="mt-10 grid gap-6 md:grid-cols-2">
-        <div class="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
-          <h3 class="text-2xl font-semibold">誠信</h3>
-          <p class="mt-3 text-base leading-relaxed text-slate-200/90">
-            以誠懇透明的態度面對每一位設計師與客戶，建立長期信任關係，確保專案資訊與進度公開透明。
-          </p>
-        </div>
-        <div class="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
-          <h3 class="text-2xl font-semibold">品質</h3>
-          <p class="mt-3 text-base leading-relaxed text-slate-200/90">
-            從選材到完工皆層層把關，堅持細膩的工法與嚴謹的驗收流程，確保作品兼具安全與美感。
-          </p>
-        </div>
-        <div class="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
-          <h3 class="text-2xl font-semibold">創新</h3>
-          <p class="mt-3 text-base leading-relaxed text-slate-200/90">
-            鼓勵團隊擁抱新技術與多元材料，不斷優化施工流程，創造更多元、具前瞻性的空間樣貌。
-          </p>
-        </div>
-        <div class="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
-          <h3 class="text-2xl font-semibold">共好</h3>
-          <p class="mt-3 text-base leading-relaxed text-slate-200/90">
-            與設計師、供應商及客戶保持緊密合作，分享專業知識與經驗，共同成就值得驕傲的空間作品。
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <Features
+    id="culture"
+    isDark
+    tagline="企業文化"
+    title="誠信、品質、創新、共好"
+    subtitle="大鋒工程的企業文化根植於「誠信、品質、創新、共好」四大核心價值。誠信是合作的基石，品質是生存的命脈，創新是發展的動力，而共好則是我們與設計師、客戶共同成長的目標。<span class='block mt-4'>我們鼓勵團隊成員不斷學習、精進技藝，並在工作中保持開放、積極的態度，攜手打造卓越的空間作品。</span>"
+    columns={2}
+    defaultIcon="tabler:sparkles"
+    items={cultureItems}
+    classes={{
+      container: 'max-w-6xl',
+      headline: {
+        container: 'max-w-3xl text-left',
+        title: 'text-3xl sm:text-4xl text-white',
+        subtitle: 'text-base sm:text-lg text-slate-200',
+        tagline: 'text-amber-200',
+      },
+      items: {
+        panel:
+          'items-start gap-4 rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition hover:border-amber-300/30',
+        icon: 'mr-4 h-12 w-12 rounded-full bg-amber-400/20 p-3 text-amber-300 rtl:ml-4 rtl:mr-0',
+        title: 'text-lg font-semibold text-white',
+        description: 'mt-2 text-base leading-relaxed text-slate-200',
+      },
+    }}
+  />
 </Layout>

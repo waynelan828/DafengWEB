@@ -19,7 +19,10 @@ const metadata = {
     tagline="Services"
     title="專業施工團隊，讓設計準確落地"
     subtitle="室內裝修、木作、系統櫃到水電泥作油漆，單一窗口整合管理，準時完工、品質有保固。"
-    actions={[{ variant: 'primary', text: '取得估價', href: '/contact' }, { text: '看作品集', href: '/portfolio' }]}
+    actions={[
+      { variant: 'primary', text: '取得估價', href: '/contact' },
+      { text: '看作品集', href: '/portfolio' },
+    ]}
     image={{
       src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1740&q=80',
       alt: '大鋒工程 服務項目',
@@ -32,10 +35,18 @@ const metadata = {
     subtitle="從格局調整到軟裝搭配，依您生活需求客製化"
     columns={3}
     items={[
-      { title: '格局/隔間/門片', description: '輕隔間、氣密門、拉門、木作或鋁框玻璃門片。', icon: 'tabler:layout-grid' },
+      {
+        title: '格局/隔間/門片',
+        description: '輕隔間、氣密門、拉門、木作或鋁框玻璃門片。',
+        icon: 'tabler:layout-grid',
+      },
       { title: '地坪/天花', description: '超耐磨地板、SPC/石英磚、系統天花/局部修飾。', icon: 'tabler:square-rounded' },
       { title: '廚衛/設備', description: '廚房更新與衛浴整修、五金設備與動線規劃。', icon: 'tabler:tools-kitchen-2' },
-      { title: '水電/弱電', description: '配電回路、插座燈具、網路與監控線路配置。', icon: 'tabler:device-desktop-analytics' },
+      {
+        title: '水電/弱電',
+        description: '配電回路、插座燈具、網路與監控線路配置。',
+        icon: 'tabler:device-desktop-analytics',
+      },
       { title: '壁材/塗裝', description: '批土找平、乳膠漆/特殊漆、進口壁材與壁紙。', icon: 'tabler:brush' },
       { title: '軟裝/窗飾', description: '窗簾/百葉、燈具/五金、家電與家具到位搭配。', icon: 'tabler:armchair' },
     ]}
@@ -78,11 +89,23 @@ const metadata = {
     title="服務流程"
     subtitle="流程清楚、里程碑驗收、透明溝通，準時完工"
     items={[
-      { title: '1. 線上諮詢與初估', description: '瞭解需求與預算，提供工法建議與大致費用。', icon: 'tabler:message-check' },
+      {
+        title: '1. 線上諮詢與初估',
+        description: '瞭解需求與預算，提供工法建議與大致費用。',
+        icon: 'tabler:message-check',
+      },
       { title: '2. 現場丈量與討論', description: '到府勘查，確認尺寸動線與材質作法。', icon: 'tabler:ruler-measure' },
-      { title: '3. 圖面與正式報價', description: '依設計圖或需求提供分項報價與材料規格。', icon: 'tabler:file-description' },
+      {
+        title: '3. 圖面與正式報價',
+        description: '依設計圖或需求提供分項報價與材料規格。',
+        icon: 'tabler:file-description',
+      },
       { title: '4. 簽約與工期排程', description: '約定里程碑與付款節點，進場前預告。', icon: 'tabler:calendar-event' },
-      { title: '5. 施作與階段驗收', description: '水電隱蔽、木作結構等關鍵工序，共同檢核。', icon: 'tabler:clipboard-check' },
+      {
+        title: '5. 施作與階段驗收',
+        description: '水電隱蔽、木作結構等關鍵工序，共同檢核。',
+        icon: 'tabler:clipboard-check',
+      },
       { title: '6. 完工交屋與保固', description: '說明保固範圍與注意事項，後續維修服務。', icon: 'tabler:home-check' },
     ]}
   />
@@ -92,8 +115,7 @@ const metadata = {
     title="客戶見證"
     testimonials={[
       {
-        testimonial:
-          '報價與規格明確，工地管理有制度，階段驗收都能清楚解釋，交屋後服務也很即時。',
+        testimonial: '報價與規格明確，工地管理有制度，階段驗收都能清楚解釋，交屋後服務也很即時。',
         name: '黃先生',
         job: '屋主｜桃園',
       },
@@ -117,4 +139,3 @@ const metadata = {
     subtitle="留下聯絡方式與基本需求，1–2 個工作日內回覆。"
   />
 </Layout>
-
