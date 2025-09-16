@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import Hero from '~/components/widgets/Hero.astro';
+import HeroCarousel from '~/components/widgets/HeroCarousel.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
@@ -11,25 +11,53 @@ import ItemGrid from '~/components/ui/ItemGrid.astro';
 
 const metadata = {
   title: '大鋒工程｜室內裝修與木作整合',
-  description:
-    '設計師與屋主信賴的施工團隊，從丈量、估價、進度控管到完工保固，一站式負責。',
+  description: '設計師與屋主信賴的施工團隊，從丈量、估價、進度控管到完工保固，一站式負責。',
 };
 ---
 
 <Layout metadata={metadata}>
   <!-- Hero：首頁主視覺 -->
 
-  <Hero
-    image={{ src: '~/assets/images/hero-image.png', alt: '大鋒工程 室內裝修與木作' }}
-  >
-    <Fragment slot="title">
-      大鋒工程<br class="block sm:hidden" />室內裝修與木作整合
-    </Fragment>
-    <Fragment slot="subtitle">
-      設計師與屋主指定的施工夥伴｜從丈量、報價、進度控管到完工保固，
-      一次到位的專業團隊。
-    </Fragment>
-  </Hero>
+  <HeroCarousel
+    slides={[
+      {
+        image: {
+          src: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1920&q=80',
+          alt: '現代客廳裝修示意',
+        },
+        tagline: '住宅裝修',
+        title: '大鋒工程<br class="hidden sm:inline" />室內裝修整合團隊',
+        subtitle: '從丈量、估價、排程到完工保固一手包辦，專業工班協作讓設計如期落地。',
+        description: '全程專人管理工序細節，保障品質與安全，入住更安心。',
+        overlayClass: 'bg-slate-900/50',
+        align: 'left',
+      },
+      {
+        image: {
+          src: 'https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1920&q=80',
+          alt: '開放式辦公室翻修案例',
+        },
+        tagline: '商業空間',
+        title: '辦公室與商空翻修',
+        subtitle: '重塑動線、機電與軟硬體配置，打造兼具品牌感與效率的空間體驗。',
+        description: '夜間與分區施工安排，確保營運不中斷。',
+        overlayClass: 'bg-black/60',
+        align: 'center',
+      },
+      {
+        image: {
+          src: 'https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=1920&q=80',
+          alt: '木作工坊與系統櫃製作',
+        },
+        tagline: '木作整合',
+        title: '系統板材 × 手作木工雙軌整合',
+        subtitle: '精緻收邊、貼合現場尺寸的訂製木作，兼顧機能與質感。',
+        description: '從材料選擇到安裝驗收層層把關，細節決定空間價值。',
+        overlayClass: 'bg-emerald-900/40',
+        align: 'right',
+      },
+    ]}
+  />
 
   <!-- 核心優勢 -->
 
@@ -149,11 +177,27 @@ const metadata = {
     tagline="流程"
     title="從諮詢到交屋，我們陪你走完全程"
     items={[
-      { title: '1. 線上諮詢與初估', description: '瞭解需求與預算範圍，提供大致工法與建議。', icon: 'tabler:message-check' },
-      { title: '2. 現場丈量與討論', description: '安排到府勘查、確認尺寸與動線，蒐集細節。', icon: 'tabler:ruler-measure' },
-      { title: '3. 圖面與正式報價', description: '依設計圖或需求列出分項明細與材料規格。', icon: 'tabler:file-description' },
+      {
+        title: '1. 線上諮詢與初估',
+        description: '瞭解需求與預算範圍，提供大致工法與建議。',
+        icon: 'tabler:message-check',
+      },
+      {
+        title: '2. 現場丈量與討論',
+        description: '安排到府勘查、確認尺寸與動線，蒐集細節。',
+        icon: 'tabler:ruler-measure',
+      },
+      {
+        title: '3. 圖面與正式報價',
+        description: '依設計圖或需求列出分項明細與材料規格。',
+        icon: 'tabler:file-description',
+      },
       { title: '4. 簽約與排程', description: '確認工期里程碑與付款節點，進場前預告。', icon: 'tabler:calendar-event' },
-      { title: '5. 施作與階段驗收', description: '重要工序到場說明，完工前共同檢核缺失。', icon: 'tabler:clipboard-check' },
+      {
+        title: '5. 施作與階段驗收',
+        description: '重要工序到場說明，完工前共同檢核缺失。',
+        icon: 'tabler:clipboard-check',
+      },
       { title: '6. 交屋與保固', description: '完工交付文件與保固說明，後續服務不間斷。', icon: 'tabler:home-check' },
     ]}
   />
@@ -163,20 +207,17 @@ const metadata = {
     title="客戶見證"
     testimonials={[
       {
-        testimonial:
-          '與設計師三方溝通順暢，工地管理有條理，進度與品質都如預期，入住後也協助快速排除小問題。',
+        testimonial: '與設計師三方溝通順暢，工地管理有條理，進度與品質都如預期，入住後也協助快速排除小問題。',
         name: '林先生',
         job: '屋主｜新北新成屋',
       },
       {
-        testimonial:
-          '木作細節很到位，轉角與收邊都處理得很好，收納使用起來很順手。',
+        testimonial: '木作細節很到位，轉角與收邊都處理得很好，收納使用起來很順手。',
         name: '周小姐',
         job: '屋主｜台北舊屋翻新',
       },
       {
-        testimonial:
-          '商空改造期間仍需營運，團隊協助分區分段施工，把影響降到最低，十分專業。',
+        testimonial: '商空改造期間仍需營運，團隊協助分區分段施工，把影響降到最低，十分專業。',
         name: '張經理',
         job: '企業客戶｜辦公室',
       },
@@ -215,6 +256,4 @@ const metadata = {
       },
     ]}
   />
-
 </Layout>
-
