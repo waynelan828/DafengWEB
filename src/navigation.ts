@@ -36,7 +36,18 @@ export const footerData = {
     { text: '條款', href: getPermalink('/terms') },
     { text: '隱私權政策', href: getPermalink('/privacy') },
   ],
-  socialLinks: [],
+  socialLinks: [
+    {
+      ariaLabel: 'Facebook',
+      icon: 'tabler:brand-facebook',
+      href: 'https://facebook.com/nice8works',
+    },
+    {
+      ariaLabel: 'Instagram',
+      icon: 'tabler:brand-instagram',
+      href: 'https://instagram.com/nice8works',
+    },
+  ],
   footNote: `
     © 大鋒工程 Da Feng Interior · All rights reserved.
   `,
