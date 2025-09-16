@@ -19,7 +19,7 @@ const { metadata } = Astro.props;
   <slot name="announcement" />
   <slot name="header">
     <!-- Align header like the AstroWind template (logo + nav left, actions right) -->
-    <Header {...headerData} isSticky showRssFeed showToggleTheme position="right" />
+    <Header {...headerData} isSticky showToggleTheme position="right" />
   </slot>
   <main>
     <slot />

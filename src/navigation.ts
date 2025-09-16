@@ -10,6 +10,18 @@ export const headerData = {
     { text: '聯絡我們', href: getPermalink('/contact') },
   ],
   actions: [],
+  socialLinks: [
+    {
+      ariaLabel: 'Facebook',
+      icon: 'tabler:brand-facebook',
+      href: 'https://facebook.com/nice8works',
+    },
+    {
+      ariaLabel: 'Instagram',
+      icon: 'tabler:brand-instagram',
+      href: 'https://instagram.com/nice8works',
+    },
+  ],
 };
 
 export const footerData = {
