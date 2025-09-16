@@ -3,9 +3,17 @@ import { Icon } from 'astro-icon/components';
 ---
 
 <div class="fixed-cta">
-  <a href="#" class="btn-primary shadow-lg gap-2" aria-label="預約估價">
-    <Icon name="simple-icons:line" class="w-5 h-5" aria-hidden="true" />
+  <a href="/contact" class="cta-booking" aria-label="預約估價">
     <span>預約估價</span>
+  </a>
+  <a
+    href="https://line.me/R/ti/p/@nice8works"
+    class="cta-line"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Line 聯絡"
+  >
+    <Icon name="simple-icons:line" class="w-6 h-6" aria-hidden="true" />
   </a>
 </div>
 
@@ -15,9 +23,49 @@ import { Icon } from 'astro-icon/components';
     bottom: 4rem;
     right: 1rem;
     z-index: 50;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
   }
 
-  .fixed-cta a {
-    gap: 0.5rem;
+  .cta-booking,
+  .cta-line {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgb(0 0 0 / 20%);
+    transition: transform 150ms ease, box-shadow 150ms ease;
+  }
+
+  .cta-booking {
+    background: var(--aw-color-primary);
+    border: 2px solid var(--aw-color-primary);
+    border-radius: 9999px;
+    padding: 1.75rem 0.75rem 1.25rem;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    letter-spacing: 0.15em;
+  }
+
+  .cta-booking:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgb(1 97 239 / 30%);
+  }
+
+  .cta-line {
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 50%;
+    background: #06c755;
+    border: 2px solid #06c755;
+  }
+
+  .cta-line:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgb(6 199 85 / 35%);
   }
 </style>
