@@ -34,12 +34,37 @@ const alignMap: Record<Alignment, string> = {
   right: 'items-end text-right',
 };
 
+const displayUtilities = new Set([
+  'hidden',
+  'block',
+  'inline',
+  'inline-block',
+  'inline-flex',
+  'flex',
+  'grid',
+  'inline-grid',
+]);
+
+const sanitizeOverlayClass = (overlayClass?: string) => {
+  const classes = typeof overlayClass === 'string' ? overlayClass.split(/\s+/) : [];
+
+  const sanitized = classes
+    .map((cls) => cls.trim())
+    .filter(Boolean)
+    .filter((cls) => {
+      const baseUtility = cls.split(':').pop() ?? cls;
+      return !displayUtilities.has(baseUtility);
+    });
+
+  return sanitized.length > 0 ? sanitized.join(' ') : 'bg-black/50';
+};
+
 const normalizedSlides = slides
   .filter((slide) => typeof slide?.image?.src === 'string' && typeof slide?.image?.alt === 'string')
   .map((slide) => ({
     ...slide,
     align: slide.align ?? 'center',
-    overlayClass: slide.overlayClass ?? 'bg-black/50',
+    overlayClass: sanitizeOverlayClass(slide.overlayClass),
     image: {
       width: 1920,
       height: 1080,
@@ -82,7 +107,10 @@ const normalizedSlides = slides
                     alt={alt}
                     {...(imageProps as ImageProps)}
                   />
-                  <div class:list={['absolute inset-0 pointer-events-none', slide.overlayClass]} aria-hidden="true" />
+                  <div
+                    class:list={['absolute inset-0 pointer-events-none hidden md:block', slide.overlayClass]}
+                    aria-hidden="true"
+                  />
                   <div
                     class:list={[
                       'relative z-10 flex h-full w-full flex-col justify-center px-6 py-16 text-white sm:px-12 md:px-20 lg:px-28',
