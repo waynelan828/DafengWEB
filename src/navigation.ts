@@ -41,8 +41,8 @@ export const footerData = {
       title: '聯絡資訊',
       links: [
         { text: 'Email: info@nice8.works', href: 'mailto:info@nice8.works' },
-        { text: '地址: 新北市中和區板南路520巷5號', href: '#' },
-        { text: '營業時間: 週一至週五 08:00-17:00', href: '#' },
+        { text: '<span class="whitespace-nowrap"> 地址: 新北市中和區板南路520巷5號</span>',href: '#' },
+        { text: '<span class="whitespace-nowrap"> 營業時間: 週一至週五 08:00-17:00</span>',href: '#' },
       ],
     },
   ],
