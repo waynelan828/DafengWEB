@@ -87,6 +87,7 @@ const normalizedSlides = slides
           effect="fade"
           speed="800"
           navigation="true"
+          allow-touch-move="true"
           autoplay-delay={autoplayDelay}
           autoplay-disable-on-interaction="false"
           autoplay-pause-on-mouse-enter="true"
@@ -142,11 +143,11 @@ const normalizedSlides = slides
           })}
           <div
             slot="container-end"
-            class="swiper-button-prev absolute left-0 z-20 h-full w-1/2 cursor-pointer bg-transparent"
+            class="swiper-button-prev absolute left-0 z-20 h-full w-1/2 cursor-pointer bg-transparent hidden md:block"
           />
           <div
             slot="container-end"
-            class="swiper-button-next absolute right-0 z-20 h-full w-1/2 cursor-pointer bg-transparent"
+            class="swiper-button-next absolute right-0 z-20 h-full w-1/2 cursor-pointer bg-transparent hidden md:block"
           />
         </swiper-container>
       </div>
