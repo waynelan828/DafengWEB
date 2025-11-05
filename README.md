@@ -300,3 +300,5 @@ Initially created by **Arthelokyo** and maintained by a community of [contributo
 ## License
 
 **AstroWind** is licensed under the MIT license — see the [LICENSE](./LICENSE.md) file for details.
+
+# Test reindex
